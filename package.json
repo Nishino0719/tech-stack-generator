@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",
+    "html2canvas": "^1.0.0-rc.7",
     "next": "10.0.9",
     "postcss": "^8.2.8",
     "react": "17.0.1",

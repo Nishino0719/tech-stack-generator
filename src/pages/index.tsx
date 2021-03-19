@@ -57,154 +57,32 @@ export default function Home() {
 
                 <div className="flex flex-wrap justify-center">
                   {frontends.map(({ name, url }) => {
-                    ;<div
-                      className={`${
-                        darkMord ? 'border border-white rounded-full m-4' : ''
-                      }`}
-                    >
+                    return (
                       <div
-                        className={` 
-                                        ${
-                                          darkMord
-                                            ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                                            : ''
-                                        }
-                                      `}
+                        key={url + name}
+                        className={` ${
+                          darkMord
+                            ? 'border border-white rounded-full m-4 shadow-2xl'
+                            : ''
+                        }`}
                       >
-                        <img
-                          src={url}
-                          alt={name}
-                          className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                        />
+                        <div
+                          className={` 
+                                      ${
+                                        darkMord
+                                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
+                                          : ''
+                                      }`}
+                        >
+                          <img
+                            src={url}
+                            alt={name}
+                            className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    )
                   })}
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.html}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.css3}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.nextjs}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.tailwindcss}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.element}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      darkMord ? 'border border-white rounded-full m-4' : ''
-                    }`}
-                  >
-                    <div
-                      className={` 
-                      ${
-                        darkMord
-                          ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                          : ''
-                      }
-                    `}
-                    >
-                      <img
-                        src={frontendsURL.typescript}
-                        alt=""
-                        className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

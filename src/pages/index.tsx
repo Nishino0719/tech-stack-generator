@@ -41,10 +41,10 @@ export default function Home() {
             rows={1}
             placeholder={title}
             value={title}
-            className="p-3 mx-10 border rounded-lg"
+            className="p-3 mx-4 border rounded-lg md:mx-10"
             onChange={(e) => setTitle(e.target.value.toString())}
           ></textarea>
-          <div className="ml-20">
+          <div className="md:ml-20">
             <label className="flex items-center cursor-pointer">
               <div className="relative">
                 <input

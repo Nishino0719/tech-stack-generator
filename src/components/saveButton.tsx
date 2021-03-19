@@ -20,10 +20,10 @@ export const SaveButton: React.FC<Props> = (props) => {
   return (
     <div className="block">
       <button
-        className="flex justify-center p-3 text-xl font-normal duration-200 transform border-4 shadow-lg w-80 rounded-2xl hover:scale-105"
+        className="flex justify-center p-3 text-xl font-bold duration-200 transform border-4 shadow-lg w-80 rounded-2xl hover:scale-105 "
         onClick={getElement}
       >
-        画像をダウンロードする
+        画像をダウンロード
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

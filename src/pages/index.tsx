@@ -37,14 +37,14 @@ export default function Home() {
           <textarea
             name="title"
             id="title"
-            cols={30}
+            cols={35}
             rows={1}
             placeholder={title}
             value={title}
             className="p-3 mx-4 border rounded-lg md:mx-10"
             onChange={(e) => setTitle(e.target.value.toString())}
           ></textarea>
-          <div className="md:ml-20">
+          <div className="ml-5 md:ml-10">
             <label className="flex items-center cursor-pointer">
               <div className="relative">
                 <input
@@ -61,6 +61,26 @@ export default function Home() {
               </div>
             </label>
           </div>
+          <div className="flex my-6 ml-10 mr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="w-4 ml-2 stroke-current opacity-60"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder="技術スタックを検索"
+              className="py-2 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
+            />
+          </div>
         </div>
         <div className="mt-0 lg:mt-5">
           <div className={`mx-1 md:ml-5 ${darkMode ? 'dark' : ''}`}>
@@ -74,39 +94,39 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-wrap justify-center">
-                  {frontends.map(({ name, url }) => {
+                  {/* {frontends.map(({ name, url }) => {
                     return (
                       <div className="" key={url + name}>
                         <div
                           className={` ${
                             darkMode
                               ? 'border border-white rounded-full mx-4 mt-4 shadow-2xl'
-                              : 'border rounded-full mx-4 mt-4 shadow-2xl p-1'
+                              : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
                           }`}
                         >
                           <div
                             className={` 
                             ${
                               darkMode
-                                ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                                : 'w-20 h-20 rounded-full border'
+                                ? `m-1 pt-4 px-4 w-14 h-14 rounded-full bg-white`
+                                : 'w-14 h-14 rounded-full border'
                             }`}
                           >
                             <img
                               src={url}
                               alt={name}
-                              className={`w-auto h-10 ${
-                                darkMode ? '' : 'mx-5 mt-5'
+                              className={`w-auto h-6 ${
+                                darkMode ? '' : 'mx-4 mt-4'
                               }`}
                             />
                           </div>
                         </div>
-                        <p className="h-5 font-semibold dark:text-gray-200">
+                        <p className="h-4 pt-1 text-xs font-bold dark:text-gray-200">
                           {isDisplayName ? name : ''}
                         </p>
                       </div>
                     )
-                  })}
+                  })} */}
                 </div>
               </div>
             </div>

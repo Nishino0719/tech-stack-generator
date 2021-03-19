@@ -5,10 +5,16 @@ module.exports = {
     extend: {
       colors: { 'accent-1': '#333' },
       width: {
-        'w-figure': '56.25rem'
+        'w-figure': '56.25rem',
+        'lg-figure': '45rem',
+        'sm-figure': '33.75rem',
+        'xs-figure': '22.5rem'
       },
       height: {
-        'h-figure': '29.53125rem'
+        'h-figure': '29.53125rem',
+        'lg-figure': '23.625rem',
+        'sm-figure': '17.71875rem',
+        'xs-figure': '11.8125rem'
       }
     }
   },

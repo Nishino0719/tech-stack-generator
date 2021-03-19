@@ -63,7 +63,7 @@ export default function Home() {
                         className={` ${
                           darkMord
                             ? 'border border-white rounded-full m-4 shadow-2xl'
-                            : ''
+                            : 'border rounded-full m-4 shadow-2xl p-1'
                         }`}
                       >
                         <div
@@ -71,13 +71,13 @@ export default function Home() {
                                       ${
                                         darkMord
                                           ? `m-1 pt-5 px-5 w-20 h-20 rounded-full bg-white`
-                                          : ''
+                                          : 'w-20 h-20 rounded-full border'
                                       }`}
                         >
                           <img
                             src={url}
                             alt={name}
-                            className={`w-auto h-10 ${darkMord ? '' : 'm-10'}`}
+                            className={`w-auto h-10 ${darkMord ? '' : 'm-5'}`}
                           />
                         </div>
                       </div>

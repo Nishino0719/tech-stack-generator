@@ -55,17 +55,17 @@ export default function Home() {
                   <img
                     src="./tech/front/typescript.svg"
                     alt="html"
-                    className="w-10 m-10 bg-white"
+                    className="w-auto h-10 m-10"
                   />
                   <img
                     src="./tech/front/nextjs-logo.svg"
                     alt="html"
-                    className="w-12 h-12 p-2 m-10 bg-white rounded-full "
+                    className="w-auto h-10 m-10"
                   />
                   <img
                     src="./tech/front/nextjs-icon.svg"
                     alt="html"
-                    className="w-10 m-10 bg-white"
+                    className="w-auto h-10 m-10"
                   />
                 </div>
               </div>

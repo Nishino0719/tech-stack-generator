@@ -1,12 +1,18 @@
 import html2canvas from 'html2canvas'
 
-export const SaveButton = () => {
+type Props = {
+  title?: string
+}
+
+export const SaveButton: React.FC<Props> = (props) => {
   const getElement = () => {
     html2canvas(document.querySelector('#tech-stack'), { scale: 3 }).then(
       (canvas) => {
         let a = document.createElement('a')
-        a.href = canvas.toDataURL('image/png', 1.0)
-        a.download = 'my-tech-stack.png'
+        a.href = canvas.toDataURL('image/jpg', 1.0)
+        a.download = `${
+          props.title != 'タイトル' ? props.title : 'my-tech-stack'
+        }.jpg`
         a.click()
       }
     )

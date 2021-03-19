@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Header />
       <div className="flex justify-center">
-        <div className="my-5 border-4 shadow-lg rounded-3xl w-96">
+        <div className="my-5 mr-5 border-4 shadow-lg rounded-3xl w-96">
           <div className="flex m-10">
             <p className="">作業場</p>
             <div className="ml-20">
@@ -43,7 +43,7 @@ export default function Home() {
           ></textarea>
         </div>
         <div className="mt-5">
-          <div className="mx-10">
+          <div className="ml-5">
             <div
               className="border-4 shadow-lg rounded-3xl w-w-figure h-h-figure"
               id="tech-stack"

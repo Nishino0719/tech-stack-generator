@@ -13,7 +13,10 @@ class MyDocument extends Document {
       <Html lang="ja">
         <title>技術スタックジェネレーター</title>
         <Head>
-          <meta name="" content="お好みの技術スタックを簡単に画像に" />
+          <meta
+            name="description"
+            content="お好みの技術スタックを簡単に画像に"
+          />
         </Head>
         <body>
           <Main />

@@ -10,17 +10,15 @@ export const SaveButton: React.FC<Props> = (props) => {
       (canvas) => {
         let a = document.createElement('a')
         a.href = canvas.toDataURL('image/jpg', 1.0)
-        a.download = `${
-          props.title != 'タイトル' ? props.title : 'my-tech-stack'
-        }.jpg`
+        a.download = `${props.title != '' ? props.title : 'my-tech-stack'}.jpg`
         a.click()
       }
     )
   }
   return (
-    <div className="block">
+    <div className="block text-center">
       <button
-        className="flex justify-center p-3 text-xl font-bold duration-200 transform border-4 shadow-lg w-80 rounded-2xl hover:scale-105 "
+        className="flex w-56 p-2 text-sm font-semibold duration-200 transform border-4 shadow-lg justify-items-center lg:p-3 lg:text-xl lg:w-80 rounded-2xl hover:scale-105 "
         onClick={getElement}
       >
         画像をダウンロード
@@ -28,7 +26,7 @@ export const SaveButton: React.FC<Props> = (props) => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          className="ml-3 stroke-current w-7 h-7"
+          className="w-5 h-5 ml-3 stroke-current lg:w-7 lg:h-7"
         >
           <path
             strokeLinecap="round"

@@ -37,7 +37,7 @@ export default function Home() {
           <textarea
             name="title"
             id="title"
-            cols={35}
+            cols={30}
             rows={1}
             placeholder={title}
             value={title}

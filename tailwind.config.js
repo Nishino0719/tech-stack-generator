@@ -11,6 +11,7 @@ module.exports = {
         'xs-figure': '22.5rem'
       },
       height: {
+        'h-144': '36rem',
         'h-figure': '29.53125rem',
         'lg-figure': '23.625rem',
         'sm-figure': '17.71875rem',

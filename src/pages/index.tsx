@@ -13,7 +13,7 @@ export default function Home() {
       <div className="h-screen overflow-hidden ">
         <Header />
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
-          <div className="mx-1 mt-5 border-4 shadow-lg lg:overflow-scroll lg:h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
+          <div className="mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-auto h-52 lg:h-auto lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
             <div className="flex m-10">
               <p className="">作業場</p>
               <div className="ml-20">

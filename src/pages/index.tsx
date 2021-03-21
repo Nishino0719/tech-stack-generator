@@ -4,7 +4,7 @@ import { Header } from '../components/header'
 import { SaveButton } from '../components/saveButton'
 import { TechLogos } from '../components/techlogos'
 import { TechLogoSearch } from '../components/techlogosearch'
-import { backends, frontends, games, others, tasks } from '../lib/tech'
+import { backends, frontends, games, mobiles, others, tasks } from '../lib/tech'
 
 export default function Home() {
   const [title, setTitle] = useState('タイトル')
@@ -12,10 +12,10 @@ export default function Home() {
   const [isDisplayName, setIsDisplayName] = useState(false)
   return (
     <>
-      <div className="h-screen overflow-hidden ">
+      <div className="h-screen overflow-hidden">
         <Header />
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
-          <div className="mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
+          <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
             <div className="flex m-10">
               <p className="">作業場</p>
               <div className="ml-20">
@@ -36,7 +36,9 @@ export default function Home() {
                 </label>
               </div>
             </div>
-            <p className="mx-10 text-sm text-gray-800">タイトル</p>
+            <p className="py-1 mx-10 text-sm font-medium text-gray-700">
+              タイトル
+            </p>
             <textarea
               name="title"
               id="title"
@@ -47,7 +49,7 @@ export default function Home() {
               className="p-3 mx-10 border rounded-lg"
               onChange={(e) => setTitle(e.target.value.toString())}
             ></textarea>
-            <div className="mt-4 ml-10">
+            <div className="mt-4 ml-11">
               <label className="flex items-center cursor-pointer">
                 <div className="relative">
                   <input
@@ -64,7 +66,7 @@ export default function Home() {
                 </div>
               </label>
             </div>
-            <div className="flex my-6 ml-10 mr-3">
+            <div className="flex mt-6 ml-8 mr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -81,41 +83,49 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="技術スタックを検索"
-                className="py-2 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
+                className="py-1 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
               />
             </div>
-            <TechLogoSearch
-              category={'Frontend'}
-              techs={frontends}
-              isDisplayName={true}
-              darkMode={false}
-            />
-            <TechLogoSearch
-              category={'Backend'}
-              techs={backends}
-              isDisplayName={true}
-              darkMode={false}
-            />
-            <TechLogoSearch
-              category={'Game'}
-              techs={games}
-              isDisplayName={true}
-              darkMode={false}
-            />
-            <TechLogoSearch
-              category={'Tasks'}
-              techs={tasks}
-              isDisplayName={true}
-              darkMode={false}
-            />
-            <TechLogoSearch
-              category={'Others'}
-              techs={others}
-              isDisplayName={true}
-              darkMode={false}
-            />
+            <div className="lg:h-64 lg:mt-2 lg:overflow-scroll">
+              <TechLogoSearch
+                category={'Frontend'}
+                techs={frontends}
+                isDisplayName={true}
+                darkMode={false}
+              />
+              <TechLogoSearch
+                category={'Backend'}
+                techs={backends}
+                isDisplayName={true}
+                darkMode={false}
+              />
+              <TechLogoSearch
+                category={'Mobile'}
+                techs={mobiles}
+                isDisplayName={true}
+                darkMode={false}
+              />
+              <TechLogoSearch
+                category={'Game'}
+                techs={games}
+                isDisplayName={true}
+                darkMode={false}
+              />
+              <TechLogoSearch
+                category={'Tasks'}
+                techs={tasks}
+                isDisplayName={true}
+                darkMode={false}
+              />
+              <TechLogoSearch
+                category={'Others'}
+                techs={others}
+                isDisplayName={true}
+                darkMode={false}
+              />
+            </div>
           </div>
-          <div className="mt-5">
+          <div className="order-1 mt-5 lg:order-2">
             <div className={`mx-1 md:ml-5 ${darkMode ? 'dark' : ''}`}>
               <div
                 className={`border-4 shadow-lg rounded-3xl h-xs-figure w-xs-figure sm:w-sm-figure sm:h-sm-figure lg:w-lg-figure lg:h-lg-figure xl:w-w-figure xl:h-h-figure dark:border-gray-500 dark:bg-gray-700 overflow-hidden`}

@@ -9,9 +9,9 @@ type Props = {
 
 export const TechLogoSearch: React.FC<Props> = (props) => {
   return (
-    <div className="pt-5 pb-5 border-b">
-      <p className="ml-5 text-xl font-medium">~{props.category}~</p>
-      <div className="flex flex-wrap justify-center">
+    <div className="border-b">
+      <p className="mt-5 ml-5 text-xl font-medium">~{props.category}~</p>
+      <div className="flex flex-wrap justify-center pb-5">
         {props.techs.map(({ name, url }) => {
           return (
             <div className="" key={url + name}>

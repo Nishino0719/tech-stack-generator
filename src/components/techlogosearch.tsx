@@ -16,7 +16,7 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
           return (
             <div className="" key={url + name}>
               <div className="mx-3">
-                <div className="cursor-pointer">
+                <div className="duration-300 transform cursor-pointer hover:scale-150">
                   <img
                     src={url}
                     alt={name}

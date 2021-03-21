@@ -86,7 +86,6 @@ export const othersURL = {
   nginx: urlOtherBefor + 'nginx' + urlAfter,
   opencv: urlOtherBefor + 'opencv' + urlAfter,
   postgresql: urlOtherBefor + 'postgresql' + urlAfter,
-  reactivex: urlOtherBefor + 'reactivex' + urlAfter,
   rxjs: urlOtherBefor + 'rxjs' + urlAfter,
   webpack: urlOtherBefor + 'webpack' + urlAfter
 }
@@ -176,7 +175,6 @@ export const others: TechnologyInfo[] = [
   { url: othersURL.nginx, name: 'Nginx' },
   { url: othersURL.opencv, name: 'OpenCV' },
   { url: othersURL.postgresql, name: 'PostgreSQL' },
-  { url: othersURL.reactivex, name: 'Rx' },
   { url: othersURL.rxjs, name: 'RxJS' },
   { url: othersURL.webpack, name: 'Webpack' }
 ]

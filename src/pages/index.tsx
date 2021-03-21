@@ -4,14 +4,7 @@ import { Header } from '../components/header'
 import { SaveButton } from '../components/saveButton'
 import { TechLogos } from '../components/techlogos'
 import { TechLogoSearch } from '../components/techlogosearch'
-import {
-  backends,
-  frontends,
-  frontendsURL,
-  games,
-  others,
-  tasks
-} from '../lib/tech'
+import { backends, frontends, games, others, tasks } from '../lib/tech'
 
 export default function Home() {
   const [title, setTitle] = useState('タイトル')

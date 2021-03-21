@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { SelectedContext } from '../hooks/selected'
+import { TechnologyInfo } from '../lib/tech'
 import '../styles/globals.css'
 import '../styles/toggle.css'
 
 function MyApp({ Component, pageProps }) {
-  const [selectedItem, setSelectedItem] = useState(null)
+  const mock: TechnologyInfo[] = []
+  const [selectedItems, setSelectedItems] = useState(mock)
   return (
-    <SelectedContext.Provider value={{ selectedItem, setSelectedItem }}>
+    <SelectedContext.Provider value={{ selectedItems, setSelectedItems }}>
       <Component {...pageProps} />
     </SelectedContext.Provider>
   )

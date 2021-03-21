@@ -1,20 +1,32 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 import { SaveButton } from '../components/saveButton'
-import { TechLogos } from '../components/techlogos'
 import { TechLogoSearch } from '../components/techlogosearch'
-import { backends, frontends, games, mobiles, others, tasks } from '../lib/tech'
+import { SelectedContext } from '../hooks/selected'
+import {
+  backends,
+  frontends,
+  games,
+  mobiles,
+  others,
+  tasks,
+  TechnologyInfo
+} from '../lib/tech'
 
 export default function Home() {
   const [title, setTitle] = useState('タイトル')
   const [darkMode, setDarkMode] = useState(false)
   const [isDisplayName, setIsDisplayName] = useState(false)
+  const { selectedItems } = useContext(SelectedContext)
+  const selectedTechItems: TechnologyInfo[] = selectedItems
+
   return (
     <>
       <div className="h-screen overflow-hidden">
         <Header />
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
+          <p className="absolute text-xl font-bold top-10"></p>
           <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
             <div className="flex m-10">
               <p className="">作業場</p>
@@ -137,7 +149,7 @@ export default function Home() {
                   </p>
 
                   <div className="flex flex-wrap justify-center">
-                    {frontends.map(({ name, url }) => {
+                    {selectedTechItems.map(({ name, url }) => {
                       return (
                         <div className="" key={url + name}>
                           <div

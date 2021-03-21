@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const TechLogoSearch: React.FC<Props> = (props) => {
-  const { selectedItem, setSelectedItem } = useContext(SelectedContext)
+  const { selectedItems, setSelectedItems } = useContext(SelectedContext)
 
   return (
     <div className="border-b">
@@ -22,7 +22,13 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
               <div className="mx-3">
                 <div className="duration-300 transform cursor-pointer hover:scale-150">
                   <img
-                    onClick={() => setSelectedItem({ name, url })}
+                    onClick={() => {
+                      const tempItems: TechnologyInfo[] = [
+                        ...selectedItems,
+                        { url: url, name: name }
+                      ]
+                      setSelectedItems(tempItems)
+                    }}
                     src={url}
                     alt={name}
                     className={`w-auto h-6 mx-5 mt-8`}

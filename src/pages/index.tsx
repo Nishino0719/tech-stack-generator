@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 import { SaveButton } from '../components/saveButton'
-import { frontends, frontendsURL } from '../lib/tech'
+import { TechLogos } from '../components/techlogos'
+import { TechLogoSearch } from '../components/techlogosearch'
+import { backends, frontends, games, others, tasks } from '../lib/tech'
 
 export default function Home() {
   const [title, setTitle] = useState('タイトル')
@@ -13,7 +15,7 @@ export default function Home() {
       <div className="h-screen overflow-hidden ">
         <Header />
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
-          <div className="mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-auto h-52 lg:h-auto lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
+          <div className="mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
             <div className="flex m-10">
               <p className="">作業場</p>
               <div className="ml-20">
@@ -82,6 +84,36 @@ export default function Home() {
                 className="py-2 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
               />
             </div>
+            <TechLogoSearch
+              category={'Frontend'}
+              techs={frontends}
+              isDisplayName={true}
+              darkMode={false}
+            />
+            <TechLogoSearch
+              category={'Backend'}
+              techs={backends}
+              isDisplayName={true}
+              darkMode={false}
+            />
+            <TechLogoSearch
+              category={'Game'}
+              techs={games}
+              isDisplayName={true}
+              darkMode={false}
+            />
+            <TechLogoSearch
+              category={'Tasks'}
+              techs={tasks}
+              isDisplayName={true}
+              darkMode={false}
+            />
+            <TechLogoSearch
+              category={'Others'}
+              techs={others}
+              isDisplayName={true}
+              darkMode={false}
+            />
           </div>
           <div className="mt-5">
             <div className={`mx-1 md:ml-5 ${darkMode ? 'dark' : ''}`}>

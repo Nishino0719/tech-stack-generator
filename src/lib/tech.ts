@@ -58,10 +58,10 @@ export const gamesURL = {
   unity: urlGameBefor + 'unity' + urlAfter
 }
 export const mobilesURL = {
-  flutter: urlGameBefor + 'flutter' + urlAfter,
-  java: urlGameBefor + 'java' + urlAfter,
-  kotlin: urlGameBefor + 'kotlin' + urlAfter,
-  swift: urlGameBefor + 'swift' + urlAfter
+  flutter: urlMobileBefor + 'flutter' + urlAfter,
+  java: urlMobileBefor + 'java' + urlAfter,
+  kotlin: urlMobileBefor + 'kotlin' + urlAfter,
+  swift: urlMobileBefor + 'swift' + urlAfter
 }
 
 export const othersURL = {

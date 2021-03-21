@@ -1,5 +1,5 @@
 import { TechnologyInfo } from '../lib/tech'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { SelectedContext } from '../hooks/selected'
 
 type Props = {
@@ -16,9 +16,9 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
     <div className="border-b">
       <p className="mt-5 ml-5 text-xl font-medium">~{props.category}~</p>
       <div className="flex flex-wrap justify-center pb-5">
-        {props.techs.map(({ name, url }) => {
+        {props.techs.map(({ name, url }, index) => {
           return (
-            <div className="" key={url + name}>
+            <div className={''} key={url + name}>
               <div className="mx-3">
                 <div className="duration-300 transform cursor-pointer hover:scale-150">
                   <img
@@ -27,6 +27,7 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
                         ...selectedItems,
                         { url: url, name: name }
                       ]
+                      props.techs.splice(index, 1)
                       setSelectedItems(tempItems)
                     }}
                     src={url}

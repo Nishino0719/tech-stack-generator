@@ -17,8 +17,11 @@ class MyDocument extends Document {
             name="description"
             content="お好みの技術スタックを簡単に画像に"
           />
-          {/* <link rel="icon" type="image/x-icon" href="/dev.svg" /> */}
-          <link rel="icon" type="image/x-icon" href="/prod.svg" />
+          <link
+            rel="icon"
+            type="image/x-icon"
+            href={process.env.NEXT_PUBLIC_FAVICON_HREF}
+          />
         </Head>
         <body>
           <Main />

@@ -8,14 +8,6 @@ if you visit this workspace at first, please run this command
 yarn install
 ```
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
 react-draggable
 html2canvas
 recoil?

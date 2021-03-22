@@ -20,19 +20,21 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
           return (
             <div className={''} key={url + name}>
               <div className="mx-3">
-                <div className="duration-300 transform cursor-pointer hover:scale-150">
+                <div
+                  className="duration-300 transform cursor-pointer hover:scale-150"
+                  onClick={() => {
+                    const tempItems: TechnologyInfo[] = [
+                      ...selectedItems,
+                      { url: url, name: name }
+                    ]
+                    props.techs.splice(index, 1)
+                    setSelectedItems(tempItems)
+                  }}
+                >
                   <img
-                    onClick={() => {
-                      const tempItems: TechnologyInfo[] = [
-                        ...selectedItems,
-                        { url: url, name: name }
-                      ]
-                      props.techs.splice(index, 1)
-                      setSelectedItems(tempItems)
-                    }}
                     src={url}
                     alt={name}
-                    className={`w-auto h-6 mx-5 mt-8`}
+                    className={`w-auto h-6 mx-5 mt-8 pointer-events-none`}
                   />
                 </div>
               </div>

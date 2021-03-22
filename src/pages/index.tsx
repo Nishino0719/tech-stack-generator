@@ -18,14 +18,14 @@ import {
 export default function Home() {
   const [title, setTitle] = useState('タイトル')
   const [darkMode, setDarkMode] = useState(false)
-  const [isDisplayName, setIsDisplayName] = useState(false)
+  const [isDisplayName, setIsDisplayName] = useState(true)
   const { selectedItems } = useContext(SelectedContext)
   const selectedTechItems: TechnologyInfo[] = selectedItems
+  const [isBadge, setIsBadge] = useState(false)
 
   return (
     <>
       <div className="h-screen overflow-hidden">
-        <Header />
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
           <p className="absolute text-xl font-bold top-10"></p>
           <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
@@ -55,7 +55,7 @@ export default function Home() {
             <textarea
               name="title"
               id="title"
-              cols={25}
+              cols={30}
               rows={1}
               placeholder={title}
               value={title}
@@ -69,7 +69,7 @@ export default function Home() {
                     id="toogleA"
                     type="checkbox"
                     className="hidden"
-                    onChange={() => setIsDisplayName(!isDisplayName)}
+                    onChange={() => setIsBadge(!isBadge)}
                   />
                   <div className="w-10 h-4 bg-gray-200 rounded-full shadow-inner toggle__line"></div>
                   <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
@@ -149,40 +149,58 @@ export default function Home() {
                     {title}
                   </p>
 
-                  <div className="flex flex-wrap justify-center">
-                    {selectedTechItems.map(({ name, url }) => {
+                  <div className="flex flex-wrap p-1">
+                    {selectedTechItems.map(({ name, url }, index) => {
                       return (
-                        <Draggable>
-                          <div className="" key={url + name}>
-                            <div
-                              className={` ${
-                                darkMode
-                                  ? 'border border-white rounded-full mx-4 mt-4'
-                                  : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
-                              }`}
-                            >
+                        <div key={url + name + index}>
+                          <Draggable>
+                            <div className="cursor-move">
                               <div
-                                className={` 
+                                className={
+                                  isBadge
+                                    ? `  ${
+                                        darkMode
+                                          ? 'p-1 border border-white rounded-full mx-4 mt-4'
+                                          : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
+                                      }`
+                                    : `mx-4 mt-3 p-1`
+                                }
+                              >
+                                <div
+                                  className={
+                                    isBadge
+                                      ? ` 
                             ${
                               darkMode
-                                ? `m-1 pt-4 px-4 w-14 h-14 rounded-full bg-white`
-                                : 'w-14 h-14 rounded-full border'
-                            }`}
-                              >
-                                <img
-                                  src={url}
-                                  alt={name}
-                                  className={`w-auto h-6 ${
-                                    darkMode ? '' : 'mx-4 mt-4'
-                                  }`}
-                                />
+                                ? `p-3 h-16 w-16 rounded-full bg-white`
+                                : 'p-3 h-16 w-16 rounded-full border'
+                            }`
+                                      : ``
+                                  }
+                                >
+                                  <img
+                                    src={url}
+                                    alt={name}
+                                    className={` pointer-events-none ${
+                                      isBadge
+                                        ? `${darkMode ? '' : ''}`
+                                        : `w-auto h-16`
+                                    }`}
+                                  />
+                                </div>
                               </div>
+                              <p
+                                className={
+                                  isBadge
+                                    ? 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
+                                    : 'p-1 text-xs font-bold dark:text-gray-200'
+                                }
+                              >
+                                {isDisplayName ? name : ''}
+                              </p>
                             </div>
-                            <p className="h-4 pt-1 text-xs font-bold dark:text-gray-200">
-                              {isDisplayName ? name : ''}
-                            </p>
-                          </div>
-                        </Draggable>
+                          </Draggable>
+                        </div>
                       )
                     })}
                   </div>

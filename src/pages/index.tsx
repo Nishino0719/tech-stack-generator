@@ -21,10 +21,10 @@ export default function Home() {
   const [isDisplayName, setIsDisplayName] = useState(false)
   const { selectedItems, setSelectedItems } = useContext(SelectedContext)
   const [isBadge, setIsBadge] = useState(false)
+  const [isDebug, setIsDebug] = useState(false)
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
   const [text3, setText3] = useState('')
-  const [count, setCount] = useState(1)
 
   return (
     <>
@@ -128,6 +128,23 @@ export default function Home() {
                 onChange={(e) => setText3(e.target.value.toString())}
               ></textarea>
             </div>
+            <div className="mt-4 ml-8">
+              <label className="flex items-center cursor-pointer">
+                <div className="relative">
+                  <input
+                    id="toogleA"
+                    type="checkbox"
+                    className="hidden"
+                    onChange={() => setIsDebug(!isDebug)}
+                  />
+                  <div className="w-10 h-4 bg-gray-200 rounded-full shadow-inner toggle__line"></div>
+                  <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
+                </div>
+                <div className="pt-1 ml-3 text-sm font-medium text-gray-700">
+                  Debug
+                </div>
+              </label>
+            </div>
             <div className="flex mt-3 ml-8 mr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -194,74 +211,118 @@ export default function Home() {
                 id="tech-stack"
               >
                 <div className="text-center ">
-                  <p className="h-5 p-2 text-base font-bold text-black xl:h-10 lg:h-7 md:text-2xl md:mt-5 dark:text-gray-100">
+                  <p className="h-5 p-2 text-xl font-bold text-black xl:h-10 lg:h-7 md:text-4xl md:mt-5 dark:text-gray-100">
                     {title}
                   </p>
                   <Draggable grid={[5, 5]}>
-                    <p className="h-8 m-0 text-lg font-extrabold text-black cursor-move w-36 dark:text-gray-100">
+                    <p
+                      className={`h-8 m-0 text-xl font-extrabold text-black cursor-move ${
+                        isDebug && text1 != ''
+                          ? darkMode
+                            ? ' outline-white'
+                            : ' outline-black'
+                          : ''
+                      } w-36 dark:text-gray-100`}
+                    >
                       {text1}
                     </p>
                   </Draggable>
                   <Draggable grid={[5, 5]}>
-                    <p className="h-8 text-lg font-extrabold text-black cursor-move w-36 dark:text-gray-100">
+                    <p
+                      className={`h-8 text-xl font-extrabold text-black cursor-move ${
+                        isDebug && text2 != ''
+                          ? darkMode
+                            ? ' outline-white'
+                            : ' outline-black'
+                          : ''
+                      } w-36 dark:text-gray-100`}
+                    >
                       {text2}
                     </p>
                   </Draggable>
                   <Draggable grid={[5, 5]}>
-                    <p className="h-8 text-lg font-extrabold text-black cursor-move w-36 dark:text-gray-100">
+                    <p
+                      className={`h-8 text-xl font-extrabold text-black cursor-move ${
+                        isDebug && text3 != ''
+                          ? darkMode
+                            ? ' outline-white'
+                            : ' outline-black'
+                          : ''
+                      } w-36 dark:text-gray-100`}
+                    >
                       {text3}
                     </p>
                   </Draggable>
 
-                  <div className="flex flex-wrap p-1">
+                  <div className="flex flex-wrap p-1 ml-4">
                     {selectedItems.map(({ name, url }, index) => {
                       return (
                         <div key={url + name + index}>
-                          <div className="cursor-move">
+                          <Draggable grid={[2, 2]}>
                             <div
-                              className={
-                                isBadge
-                                  ? `  ${
-                                      darkMode
-                                        ? 'p-1 border border-white rounded-full mx-4 mt-4'
-                                        : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
-                                    }`
-                                  : `mx-4 mt-3 p-1`
-                              }
+                              className={`cursor-move ${
+                                isDebug && isDisplayName
+                                  ? darkMode
+                                    ? ' outline-white'
+                                    : ' outline-black'
+                                  : ''
+                              }`}
                             >
                               <div
-                                className={
-                                  isBadge
-                                    ? ` 
+                                className={`
+                                  
+                                  ${
+                                    isBadge
+                                      ? `  ${
+                                          darkMode
+                                            ? 'p-1 border border-white rounded-full mx-4 mt-4'
+                                            : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
+                                        }`
+                                      : `mx-4 mt-3 p-1`
+                                  }
+                                    ${
+                                      isDebug && !isDisplayName
+                                        ? darkMode
+                                          ? ' outline-white'
+                                          : ' outline-black'
+                                        : ''
+                                    }
+                                    `}
+                              >
+                                <div
+                                  className={
+                                    isBadge
+                                      ? ` 
                             ${
                               darkMode
                                 ? `p-3 h-16 w-16 rounded-full bg-white`
                                 : 'p-3 h-16 w-16 rounded-full border'
                             }`
-                                    : ``
+                                      : ``
+                                  }
+                                >
+                                  <img
+                                    src={url}
+                                    alt={name}
+                                    className={` pointer-events-none ${
+                                      isBadge
+                                        ? `${darkMode ? '' : ''}`
+                                        : `w-auto h-16`
+                                    }`}
+                                  />
+                                </div>
+                              </div>
+                              <p
+                                className={
+                                  isBadge
+                                    ? 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
+                                    : 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
                                 }
                               >
-                                <img
-                                  src={url}
-                                  alt={name}
-                                  className={` pointer-events-none ${
-                                    isBadge
-                                      ? `${darkMode ? '' : ''}`
-                                      : `w-auto h-16`
-                                  }`}
-                                />
-                              </div>
+                                {isDisplayName ? name : ''}
+                              </p>
                             </div>
-                            <p
-                              className={
-                                isBadge
-                                  ? 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
-                                  : 'p-1 text-xs font-bold dark:text-gray-200'
-                              }
-                            >
-                              {isDisplayName ? name : ''}
-                            </p>
-                          </div>
+                          </Draggable>
                         </div>
                       )
                     })}

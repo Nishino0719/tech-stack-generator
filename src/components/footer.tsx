@@ -2,7 +2,14 @@ export const Footer = () => {
   return (
     <div className="h-12 border-t">
       <p className="p-2 text-sm text-center font-nomal">
-        Powered by ©︎Nishino0719
+        Powered by
+        <a
+          href="https://nishino0719.work/"
+          className="no-underline hover:underline"
+          target="_brank"
+        >
+          ©︎Nishino0719
+        </a>
       </p>
     </div>
   )

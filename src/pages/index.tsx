@@ -29,9 +29,23 @@ export default function Home() {
         <div className="flex flex-wrap justify-center lg:flex-nowrap">
           <p className="absolute text-xl font-bold top-10"></p>
           <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
-            <div className="flex m-10">
-              <p className="">作業場</p>
-              <div className="ml-20">
+            <div className="flex flex-wrap my-5 ml-10">
+              <div className="mt-4 mr-5">
+                <label className="flex items-center cursor-pointer">
+                  <div className="relative">
+                    <input
+                      id="toogleA"
+                      type="checkbox"
+                      className="hidden"
+                      onChange={() => setIsDisplayName(!isDisplayName)}
+                    />
+                    <div className="w-10 h-4 bg-gray-200 rounded-full shadow-inner toggle__line"></div>
+                    <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
+                  </div>
+                  <div className="ml-3 font-medium text-gray-700">名前</div>
+                </label>
+              </div>
+              <div className="mt-4 mr-5">
                 <label className="flex items-center cursor-pointer">
                   <div className="relative">
                     <input
@@ -48,6 +62,21 @@ export default function Home() {
                   </div>
                 </label>
               </div>
+              <div className="mt-4 mr-5">
+                <label className="flex items-center cursor-pointer">
+                  <div className="relative">
+                    <input
+                      id="toogleA"
+                      type="checkbox"
+                      className="hidden"
+                      onChange={() => setIsBadge(!isBadge)}
+                    />
+                    <div className="w-10 h-4 bg-gray-200 rounded-full shadow-inner toggle__line"></div>
+                    <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
+                  </div>
+                  <div className="ml-3 font-medium text-gray-700">バッジ</div>
+                </label>
+              </div>
             </div>
             <p className="py-1 mx-10 text-sm font-medium text-gray-700">
               タイトル
@@ -62,23 +91,6 @@ export default function Home() {
               className="p-3 mx-10 border rounded-lg"
               onChange={(e) => setTitle(e.target.value.toString())}
             ></textarea>
-            <div className="mt-4 ml-11">
-              <label className="flex items-center cursor-pointer">
-                <div className="relative">
-                  <input
-                    id="toogleA"
-                    type="checkbox"
-                    className="hidden"
-                    onChange={() => setIsBadge(!isBadge)}
-                  />
-                  <div className="w-10 h-4 bg-gray-200 rounded-full shadow-inner toggle__line"></div>
-                  <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
-                </div>
-                <div className="ml-3 font-medium text-gray-700">
-                  名前を表示{isDisplayName ? 'する' : 'しない'}
-                </div>
-              </label>
-            </div>
             <div className="flex mt-6 ml-8 mr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

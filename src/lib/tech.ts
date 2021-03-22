@@ -13,12 +13,14 @@ export type TechnologyInfo = {
 
 export const frontendsURL = {
   angular: urlFrontBefor + 'angular' + urlAfter,
+  babel: urlFrontBefor + 'babel' + urlAfter,
   bootstrap: urlFrontBefor + 'bootstrap' + urlAfter,
   css3: urlFrontBefor + 'css-3' + urlAfter,
   element: urlFrontBefor + 'element' + urlAfter,
   gatsby: urlFrontBefor + 'gatsby' + urlAfter,
   html: urlFrontBefor + 'html' + urlAfter,
   javascript: urlFrontBefor + 'javascript' + urlAfter,
+  jquery: urlFrontBefor + 'jquery' + urlAfter,
   lighthouse: urlFrontBefor + 'lighthouse' + urlAfter,
   materialui: urlFrontBefor + 'material-ui' + urlAfter,
   materializecss: urlFrontBefor + 'materializecss' + urlAfter,
@@ -28,6 +30,7 @@ export const frontendsURL = {
   preact: urlFrontBefor + 'preact' + urlAfter,
   react: urlFrontBefor + 'react' + urlAfter,
   sass: urlFrontBefor + 'sass' + urlAfter,
+  storybook: urlFrontBefor + 'storybook' + urlAfter,
   svelte: urlFrontBefor + 'svelte-icon' + urlAfter,
   tailwindcss: urlFrontBefor + 'tailwindcss' + urlAfter,
   typescript: urlFrontBefor + 'typescript' + urlAfter,
@@ -78,6 +81,7 @@ export const othersURL = {
   firebase: urlOtherBefor + 'firebase' + urlAfter,
   googlecloudfunctions: urlOtherBefor + 'google-cloud-functions' + urlAfter,
   googlecloudrun: urlOtherBefor + 'google-cloud-run' + urlAfter,
+  graphql: urlOtherBefor + 'graphql' + urlAfter,
   heroku: urlOtherBefor + 'heroku-icon' + urlAfter,
   kubernetes: urlOtherBefor + 'kubernetes' + urlAfter,
   mongodb: urlOtherBefor + 'mongodb' + urlAfter,
@@ -87,25 +91,34 @@ export const othersURL = {
   opencv: urlOtherBefor + 'opencv' + urlAfter,
   postgresql: urlOtherBefor + 'postgresql' + urlAfter,
   rxjs: urlOtherBefor + 'rxjs' + urlAfter,
-  webpack: urlOtherBefor + 'webpack' + urlAfter
+  sendgrid: urlOtherBefor + 'sendgrid' + urlAfter,
+  stripe: urlOtherBefor + 'stripe' + urlAfter,
+  vercel: urlOtherBefor + 'vercel' + urlAfter,
+  webpack: urlOtherBefor + 'webpack' + urlAfter,
+  wordpress: urlOtherBefor + 'wordpress' + urlAfter
 }
 
 export const tasksURL = {
+  asana: urlTaskBefor + 'asana' + urlAfter,
   bitbucket: urlTaskBefor + 'bitbucket' + urlAfter,
   discord: urlTaskBefor + 'discord' + urlAfter,
   github: urlTaskBefor + 'github-icon' + urlAfter,
+  gitlab: urlTaskBefor + 'gitlab' + urlAfter,
   slack: urlTaskBefor + 'slack' + urlAfter,
-  sourcetree: urlTaskBefor + 'sourcetree' + urlAfter
+  sourcetree: urlTaskBefor + 'sourcetree' + urlAfter,
+  trello: urlTaskBefor + 'trello' + urlAfter
 }
 
 export const frontends: TechnologyInfo[] = [
   { name: 'Angular', url: frontendsURL.angular },
+  { name: 'Babel', url: frontendsURL.babel },
   { name: 'Bootstrap', url: frontendsURL.bootstrap },
   { name: 'CSS3', url: frontendsURL.css3 },
   { name: 'Element UI', url: frontendsURL.element },
   { name: 'Gatsby', url: frontendsURL.gatsby },
   { name: 'HTML 5', url: frontendsURL.html },
   { name: 'Javascript', url: frontendsURL.javascript },
+  { name: 'jQuery', url: frontendsURL.jquery },
   { name: 'Materializecss', url: frontendsURL.materializecss },
   { name: 'Material UI', url: frontendsURL.materialui },
   { name: 'Next.js', url: frontendsURL.nextjs },
@@ -114,6 +127,7 @@ export const frontends: TechnologyInfo[] = [
   { name: 'Preact', url: frontendsURL.preact },
   { name: 'React', url: frontendsURL.react },
   { name: 'Sass', url: frontendsURL.sass },
+  { name: 'StoryBook', url: frontendsURL.storybook },
   { name: 'Svelte', url: frontendsURL.svelte },
   { name: 'Tailwind css', url: frontendsURL.tailwindcss },
   { name: 'Typescript', url: frontendsURL.typescript },
@@ -167,6 +181,7 @@ export const others: TechnologyInfo[] = [
   { url: othersURL.firebase, name: 'Firebase' },
   { url: othersURL.googlecloudfunctions, name: 'Cloud Functions' },
   { url: othersURL.googlecloudrun, name: 'Cloud Runs' },
+  { url: othersURL.graphql, name: 'GlaphQL' },
   { url: othersURL.heroku, name: 'Heroku' },
   { url: othersURL.kubernetes, name: 'Kubernetes' },
   { url: othersURL.mongodb, name: 'MongoDB' },
@@ -176,13 +191,20 @@ export const others: TechnologyInfo[] = [
   { url: othersURL.opencv, name: 'OpenCV' },
   { url: othersURL.postgresql, name: 'PostgreSQL' },
   { url: othersURL.rxjs, name: 'RxJS' },
-  { url: othersURL.webpack, name: 'Webpack' }
+  { url: othersURL.sendgrid, name: 'SendGrid' },
+  { url: othersURL.stripe, name: 'Stripe' },
+  { url: othersURL.vercel, name: 'Vercel' },
+  { url: othersURL.webpack, name: 'Webpack' },
+  { url: othersURL.wordpress, name: 'Wordpress' }
 ]
 
 export const tasks: TechnologyInfo[] = [
+  { url: tasksURL.asana, name: 'Asana' },
   { url: tasksURL.bitbucket, name: 'BitBucket' },
   { url: tasksURL.discord, name: 'Discord' },
   { url: tasksURL.github, name: 'Github' },
+  { url: tasksURL.gitlab, name: 'GitLab' },
   { url: tasksURL.slack, name: 'Slack' },
-  { url: tasksURL.sourcetree, name: 'Sourcetree' }
+  { url: tasksURL.sourcetree, name: 'Sourcetree' },
+  { url: tasksURL.trello, name: 'Trello' }
 ]

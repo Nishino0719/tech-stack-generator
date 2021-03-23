@@ -13,6 +13,11 @@ export type TechnologyInfo = {
   darkmodeUrl: string
 }
 
+export interface SearchTable {
+  lowerCaseName: string
+  technologyInfo: TechnologyInfo
+}
+
 export const frontendsURL = {
   angular: urlFrontBefor + 'angular' + urlAfter,
   babel: urlFrontBefor + 'babel' + urlAfter,

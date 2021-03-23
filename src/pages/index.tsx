@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Draggable from 'react-draggable'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
@@ -11,6 +11,7 @@ import {
   games,
   mobiles,
   others,
+  SearchTable,
   tasks,
   TechnologyInfo
 } from '../lib/tech'
@@ -26,6 +27,53 @@ export default function Home() {
   const [text2, setText2] = useState('')
   const [text3, setText3] = useState('')
   const [border, setBorder] = useState(true)
+
+  const [searchTable, setSearchTable] = useState<SearchTable[]>([])
+
+  function setTable() {
+    let lowerCaseTable: SearchTable[] = []
+    frontends.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    backends.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    mobiles.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    games.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    tasks.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    others.map((tech) => {
+      lowerCaseTable.push({
+        lowerCaseName: tech.name.toLowerCase(),
+        technologyInfo: tech
+      })
+    })
+    setSearchTable(lowerCaseTable)
+  }
+
+  useEffect(() => {
+    setTable()
+  }, [])
 
   return (
     <>

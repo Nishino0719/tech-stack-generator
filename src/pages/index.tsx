@@ -99,8 +99,8 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap">
               <textarea
-                name="title"
-                id="title"
+                name="text1"
+                id="text1"
                 cols={12}
                 rows={1}
                 placeholder={'テキスト1'}
@@ -109,8 +109,8 @@ export default function Home() {
                 onChange={(e) => setText1(e.target.value.toString())}
               ></textarea>
               <textarea
-                name="title"
-                id="title"
+                name="text2"
+                id="text2"
                 cols={12}
                 rows={1}
                 placeholder={'テキスト2'}
@@ -119,8 +119,8 @@ export default function Home() {
                 onChange={(e) => setText2(e.target.value.toString())}
               ></textarea>
               <textarea
-                name="title"
-                id="title"
+                name="text3"
+                id="text3"
                 cols={12}
                 rows={1}
                 placeholder={'テキスト3'}

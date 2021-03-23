@@ -130,7 +130,12 @@ export const frontends: TechnologyInfo[] = [
     hasDarkmode: false,
     darkmodeUrl: ''
   },
-  { name: 'CSS3', url: frontendsURL.css3, hasDarkmode: false, darkmodeUrl: '' },
+  {
+    name: 'CSS3',
+    url: frontendsURL.css3,
+    hasDarkmode: true,
+    darkmodeUrl: urlFrontBefor + 'dark-css-3' + urlAfter
+  },
   {
     name: 'Element UI',
     url: frontendsURL.element,
@@ -147,7 +152,7 @@ export const frontends: TechnologyInfo[] = [
     name: 'HTML 5',
     url: frontendsURL.html,
     hasDarkmode: false,
-    darkmodeUrl: ''
+    darkmodeUrl: urlFrontBefor + 'dark-html' + urlAfter
   },
   {
     name: 'Javascript',

@@ -25,11 +25,12 @@ export default function Home() {
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
   const [text3, setText3] = useState('')
+  const [border, setBorder] = useState(true)
 
   return (
     <>
       <div className="h-screen overflow-hidden">
-        <div className="flex flex-wrap justify-center lg:flex-nowrap">
+        <div className="flex flex-wrap justify-center lg:mb-20 lg:flex-nowrap">
           <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
             <div className="flex flex-wrap mt-5 ml-10">
               <div className="mt-4 mr-5">
@@ -207,7 +208,7 @@ export default function Home() {
           <div className="order-1 mt-5 lg:order-2">
             <div className={`mx-1 md:ml-5 ${darkMode ? 'dark' : ''}`}>
               <div
-                className={` border-4 shadow-lg rounded-3xl h-xs-figure w-xs-figure sm:w-sm-figure sm:h-sm-figure lg:w-lg-figure lg:h-lg-figure xl:w-w-figure xl:h-h-figure dark:border-gray-500 dark:bg-gray-900 overflow-hidden`}
+                className={` border-4 shadow-lg rounded-3xl h-xs-figure w-xs-figure sm:w-sm-figure sm:h-sm-figure lg:w-lg-figure lg:h-lg-figure xl:w-w-figure xl:h-h-figure dark:border-gray-500 dark:bg-gray-800 overflow-hidden`}
                 id="tech-stack"
               >
                 <div
@@ -270,24 +271,25 @@ export default function Home() {
                         ? darkMode
                           ? ' border-t-2 border-gray-100'
                           : ' border-t-2 border-black'
-                        : 'border-t-2  border-white dark:border-gray-700'
+                        : 'border-t-2  border-white dark:border-gray-800'
                     }`}
                   >
-                    {selectedItems.map(({ name, url }, index) => {
-                      return (
-                        <div key={url + name + index}>
-                          <Draggable grid={[2, 2]}>
-                            <div
-                              className={`cursor-move ${
-                                isDebug && isDisplayName
-                                  ? darkMode
-                                    ? ' outline-white'
-                                    : ' outline-black'
-                                  : ''
-                              }`}
-                            >
+                    {selectedItems.map(
+                      ({ name, url, hasDarkmode, darkmodeUrl }, index) => {
+                        return (
+                          <div key={url + name + index}>
+                            <Draggable grid={[2, 2]}>
                               <div
-                                className={`
+                                className={`cursor-move ${
+                                  isDebug && isDisplayName
+                                    ? darkMode
+                                      ? ' outline-white'
+                                      : ' outline-black'
+                                    : ''
+                                }`}
+                              >
+                                <div
+                                  className={`
                                   
                                   ${
                                     isBadge
@@ -306,44 +308,53 @@ export default function Home() {
                                         : ''
                                     }
                                     `}
-                              >
-                                <div
-                                  className={
-                                    isBadge
-                                      ? ` 
+                                >
+                                  <div
+                                    className={
+                                      isBadge
+                                        ? ` 
                             ${
                               darkMode
                                 ? `p-3 h-16 w-16 rounded-full bg-white`
                                 : 'p-3 h-16 w-16 rounded-full border'
                             }`
-                                      : ``
+                                        : ``
+                                    }
+                                  >
+                                    <img
+                                      src={
+                                        hasDarkmode
+                                          ? darkMode
+                                            ? isBadge
+                                              ? url
+                                              : darkmodeUrl
+                                            : url
+                                          : url
+                                      }
+                                      alt={name}
+                                      className={` pointer-events-none ${
+                                        isBadge
+                                          ? `${darkMode ? '' : ''}`
+                                          : `w-auto h-16 `
+                                      }`}
+                                    />
+                                  </div>
+                                </div>
+                                <p
+                                  className={
+                                    isBadge
+                                      ? 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
+                                      : 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
                                   }
                                 >
-                                  <img
-                                    src={url}
-                                    alt={name}
-                                    className={` pointer-events-none ${
-                                      isBadge
-                                        ? `${darkMode ? '' : ''}`
-                                        : `w-auto h-16 `
-                                    }`}
-                                  />
-                                </div>
+                                  {isDisplayName ? name : ''}
+                                </p>
                               </div>
-                              <p
-                                className={
-                                  isBadge
-                                    ? 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
-                                    : 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
-                                }
-                              >
-                                {isDisplayName ? name : ''}
-                              </p>
-                            </div>
-                          </Draggable>
-                        </div>
-                      )
-                    })}
+                            </Draggable>
+                          </div>
+                        )
+                      }
+                    )}
                   </div>
                 </div>
               </div>

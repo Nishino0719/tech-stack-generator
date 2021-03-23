@@ -9,6 +9,8 @@ const urlAfter = '.svg'
 export type TechnologyInfo = {
   url: string
   name: string
+  hasDarkmode: boolean
+  darkmodeUrl: string
 }
 
 export const frontendsURL = {
@@ -110,101 +112,416 @@ export const tasksURL = {
 }
 
 export const frontends: TechnologyInfo[] = [
-  { name: 'Angular', url: frontendsURL.angular },
-  { name: 'Babel', url: frontendsURL.babel },
-  { name: 'Bootstrap', url: frontendsURL.bootstrap },
-  { name: 'CSS3', url: frontendsURL.css3 },
-  { name: 'Element UI', url: frontendsURL.element },
-  { name: 'Gatsby', url: frontendsURL.gatsby },
-  { name: 'HTML 5', url: frontendsURL.html },
-  { name: 'Javascript', url: frontendsURL.javascript },
-  { name: 'jQuery', url: frontendsURL.jquery },
-  { name: 'Materializecss', url: frontendsURL.materializecss },
-  { name: 'Material UI', url: frontendsURL.materialui },
-  { name: 'Next.js', url: frontendsURL.nextjs },
-  { name: 'Nuxt.js', url: frontendsURL.nuxticon },
-  { name: 'Postcss', url: frontendsURL.postcss },
-  { name: 'Preact', url: frontendsURL.preact },
-  { name: 'React', url: frontendsURL.react },
-  { name: 'Sass', url: frontendsURL.sass },
-  { name: 'StoryBook', url: frontendsURL.storybook },
-  { name: 'Svelte', url: frontendsURL.svelte },
-  { name: 'Tailwind css', url: frontendsURL.tailwindcss },
-  { name: 'Typescript', url: frontendsURL.typescript },
-  { name: 'Vue', url: frontendsURL.vue },
-  { name: 'Vuetifyjs', url: frontendsURL.vuetifyjs }
+  {
+    name: 'Angular',
+    url: frontendsURL.angular,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Babel',
+    url: frontendsURL.babel,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Bootstrap',
+    url: frontendsURL.bootstrap,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { name: 'CSS3', url: frontendsURL.css3, hasDarkmode: false, darkmodeUrl: '' },
+  {
+    name: 'Element UI',
+    url: frontendsURL.element,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Gatsby',
+    url: frontendsURL.gatsby,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'HTML 5',
+    url: frontendsURL.html,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Javascript',
+    url: frontendsURL.javascript,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'jQuery',
+    url: frontendsURL.jquery,
+    hasDarkmode: true,
+    darkmodeUrl: urlFrontBefor + 'dark-jquery' + urlAfter
+  },
+  {
+    name: 'Materializecss',
+    url: frontendsURL.materializecss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Material UI',
+    url: frontendsURL.materialui,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Next.js',
+    url: frontendsURL.nextjs,
+    hasDarkmode: true,
+    darkmodeUrl: urlFrontBefor + 'dark-nextjs' + urlAfter
+  },
+  {
+    name: 'Nuxt.js',
+    url: frontendsURL.nuxticon,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Postcss',
+    url: frontendsURL.postcss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Preact',
+    url: frontendsURL.preact,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'React',
+    url: frontendsURL.react,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { name: 'Sass', url: frontendsURL.sass, hasDarkmode: false, darkmodeUrl: '' },
+  {
+    name: 'StoryBook',
+    url: frontendsURL.storybook,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Svelte',
+    url: frontendsURL.svelte,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Tailwind css',
+    url: frontendsURL.tailwindcss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Typescript',
+    url: frontendsURL.typescript,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { name: 'Vue', url: frontendsURL.vue, hasDarkmode: false, darkmodeUrl: '' },
+  {
+    name: 'Vuetifyjs',
+    url: frontendsURL.vuetifyjs,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  }
 ]
 
 export const backends: TechnologyInfo[] = [
-  { url: backendsURL.cakephp, name: 'CakePHP' },
-  { url: backendsURL.django, name: 'Django' },
-  { url: backendsURL.express, name: 'Express' },
-  { url: backendsURL.flask, name: 'Flask' },
-  { url: backendsURL.go, name: 'Go' },
-  { url: backendsURL.haskell, name: 'Haskell' },
-  { url: backendsURL.laravel, name: 'Laravel' },
-  { url: backendsURL.nestjs, name: 'Nest.js' },
-  { url: backendsURL.nodejs, name: 'Node.js' },
-  { url: backendsURL.php, name: 'PHP' },
-  { url: backendsURL.python, name: 'Python' },
-  { url: backendsURL.rails, name: 'Rails' },
-  { url: backendsURL.ruby, name: 'Ruby' },
-  { url: backendsURL.rust, name: 'Rust' },
-  { url: backendsURL.scala, name: 'Scala' }
+  {
+    url: backendsURL.cakephp,
+    name: 'CakePHP',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: backendsURL.django,
+    name: 'Django',
+    hasDarkmode: true,
+    darkmodeUrl: urlBackBefor + 'dark-django-icon' + urlAfter
+  },
+  {
+    url: backendsURL.express,
+    name: 'Express',
+    hasDarkmode: true,
+    darkmodeUrl: urlBackBefor + 'dark-express' + urlAfter
+  },
+  {
+    url: backendsURL.flask,
+    name: 'Flask',
+    hasDarkmode: true,
+    darkmodeUrl: urlBackBefor + 'dark-flask' + urlAfter
+  },
+  { url: backendsURL.go, name: 'Go', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: backendsURL.haskell,
+    name: 'Haskell',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: backendsURL.laravel,
+    name: 'Laravel',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: backendsURL.nestjs,
+    name: 'Nest.js',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: backendsURL.nodejs,
+    name: 'Node.js',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: backendsURL.php, name: 'PHP', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: backendsURL.python,
+    name: 'Python',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: backendsURL.rails,
+    name: 'Rails',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: backendsURL.ruby, name: 'Ruby', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: backendsURL.rust,
+    name: 'Rust',
+    hasDarkmode: true,
+    darkmodeUrl: urlBackBefor + 'dark-rust' + urlAfter
+  },
+  { url: backendsURL.scala, name: 'Scala', hasDarkmode: false, darkmodeUrl: '' }
 ]
 
 export const games: TechnologyInfo[] = [
-  { url: gamesURL.c, name: 'C' },
-  { url: gamesURL.cplusplus, name: 'C++' },
-  { url: gamesURL.csharp, name: 'C#' },
-  { url: gamesURL.unity, name: 'Unity' }
+  { url: gamesURL.c, name: 'C', hasDarkmode: false, darkmodeUrl: '' },
+  { url: gamesURL.cplusplus, name: 'C++', hasDarkmode: false, darkmodeUrl: '' },
+  { url: gamesURL.csharp, name: 'C#', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: gamesURL.unity,
+    name: 'Unity',
+    hasDarkmode: true,
+    darkmodeUrl: urlGameBefor + 'dark-unity' + urlAfter
+  }
 ]
 
 export const mobiles: TechnologyInfo[] = [
-  { url: mobilesURL.flutter, name: 'Flutter' },
-  { url: mobilesURL.java, name: 'Java' },
-  { url: mobilesURL.kotlin, name: 'Kotlin' },
-  { url: mobilesURL.swift, name: 'Swift' }
+  {
+    url: mobilesURL.flutter,
+    name: 'Flutter',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: mobilesURL.java, name: 'Java', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: mobilesURL.kotlin,
+    name: 'Kotlin',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: mobilesURL.swift, name: 'Swift', hasDarkmode: false, darkmodeUrl: '' }
 ]
 
 export const others: TechnologyInfo[] = [
-  { url: othersURL.agora, name: 'Agora' },
-  { url: othersURL.algolia, name: 'Algoria' },
-  { url: othersURL.apache, name: 'Apache' },
-  { url: othersURL.apollostack, name: 'Apollo' },
-  { url: othersURL.aws, name: 'AWS' },
-  { url: othersURL.azure, name: 'Azure' },
-  { url: othersURL.bitcoin, name: 'Bitcoin' },
-  { url: othersURL.circleci, name: 'CircleCI' },
-  { url: othersURL.docker, name: 'Docker' },
-  { url: othersURL.electron, name: 'Electron' },
-  { url: othersURL.firebase, name: 'Firebase' },
-  { url: othersURL.googlecloudfunctions, name: 'Cloud Functions' },
-  { url: othersURL.googlecloudrun, name: 'Cloud Runs' },
-  { url: othersURL.graphql, name: 'GlaphQL' },
-  { url: othersURL.heroku, name: 'Heroku' },
-  { url: othersURL.kubernetes, name: 'Kubernetes' },
-  { url: othersURL.mongodb, name: 'MongoDB' },
-  { url: othersURL.mysql, name: 'MySQL' },
-  { url: othersURL.netlify, name: 'Netlify' },
-  { url: othersURL.nginx, name: 'Nginx' },
-  { url: othersURL.opencv, name: 'OpenCV' },
-  { url: othersURL.postgresql, name: 'PostgreSQL' },
-  { url: othersURL.rxjs, name: 'RxJS' },
-  { url: othersURL.sendgrid, name: 'SendGrid' },
-  { url: othersURL.stripe, name: 'Stripe' },
-  { url: othersURL.vercel, name: 'Vercel' },
-  { url: othersURL.webpack, name: 'Webpack' },
-  { url: othersURL.wordpress, name: 'Wordpress' }
+  { url: othersURL.agora, name: 'Agora', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: othersURL.algolia,
+    name: 'Algoria',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.apache,
+    name: 'Apache',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.apollostack,
+    name: 'Apollo',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-apollostack' + urlAfter
+  },
+  {
+    url: othersURL.aws,
+    name: 'AWS',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-aws' + urlAfter
+  },
+  { url: othersURL.azure, name: 'Azure', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: othersURL.bitcoin,
+    name: 'Bitcoin',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.circleci,
+    name: 'CircleCI',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-circleci' + urlAfter
+  },
+  {
+    url: othersURL.docker,
+    name: 'Docker',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.electron,
+    name: 'Electron',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.firebase,
+    name: 'Firebase',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.googlecloudfunctions,
+    name: 'Cloud Functions',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.googlecloudrun,
+    name: 'Cloud Runs',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.graphql,
+    name: 'GlaphQL',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.heroku,
+    name: 'Heroku',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-heroku-icon' + urlAfter
+  },
+  {
+    url: othersURL.kubernetes,
+    name: 'Kubernetes',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.mongodb,
+    name: 'MongoDB',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-mongodb' + urlAfter
+  },
+  {
+    url: othersURL.mysql,
+    name: 'MySQL',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-mysql' + urlAfter
+  },
+  {
+    url: othersURL.netlify,
+    name: 'Netlify',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: othersURL.nginx, name: 'Nginx', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: othersURL.opencv,
+    name: 'OpenCV',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.postgresql,
+    name: 'PostgreSQL',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: othersURL.rxjs, name: 'RxJS', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: othersURL.sendgrid,
+    name: 'SendGrid',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.stripe,
+    name: 'Stripe',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.vercel,
+    name: 'Vercel',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-vercel' + urlAfter
+  },
+  {
+    url: othersURL.webpack,
+    name: 'Webpack',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: othersURL.wordpress,
+    name: 'Wordpress',
+    hasDarkmode: true,
+    darkmodeUrl: urlOtherBefor + 'dark-wordpress' + urlAfter
+  }
 ]
 
 export const tasks: TechnologyInfo[] = [
-  { url: tasksURL.asana, name: 'Asana' },
-  { url: tasksURL.bitbucket, name: 'BitBucket' },
-  { url: tasksURL.discord, name: 'Discord' },
-  { url: tasksURL.github, name: 'Github' },
-  { url: tasksURL.gitlab, name: 'GitLab' },
-  { url: tasksURL.slack, name: 'Slack' },
-  { url: tasksURL.sourcetree, name: 'Sourcetree' },
-  { url: tasksURL.trello, name: 'Trello' }
+  {
+    url: tasksURL.asana,
+    name: 'Asana',
+    hasDarkmode: true,
+    darkmodeUrl: urlTaskBefor + 'dark-asana' + urlAfter
+  },
+  {
+    url: tasksURL.bitbucket,
+    name: 'BitBucket',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: tasksURL.discord,
+    name: 'Discord',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: tasksURL.github,
+    name: 'Github',
+    hasDarkmode: true,
+    darkmodeUrl: urlTaskBefor + 'dark-github-icon' + urlAfter
+  },
+  { url: tasksURL.gitlab, name: 'GitLab', hasDarkmode: false, darkmodeUrl: '' },
+  { url: tasksURL.slack, name: 'Slack', hasDarkmode: false, darkmodeUrl: '' },
+  {
+    url: tasksURL.sourcetree,
+    name: 'Sourcetree',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  { url: tasksURL.trello, name: 'Trello', hasDarkmode: false, darkmodeUrl: '' }
 ]

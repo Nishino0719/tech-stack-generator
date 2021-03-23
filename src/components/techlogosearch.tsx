@@ -16,7 +16,7 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
     <div className="border-b">
       <p className="mt-5 ml-5 text-xl font-medium">~{props.category}~</p>
       <div className="flex flex-wrap justify-center pb-5">
-        {props.techs.map(({ name, url }, index) => {
+        {props.techs.map(({ name, url, hasDarkmode, darkmodeUrl }, index) => {
           return (
             <div className={' select-none'} key={url + name}>
               <div className="mx-3">
@@ -25,7 +25,12 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
                   onClick={() => {
                     const tempItems: TechnologyInfo[] = [
                       ...selectedItems,
-                      { url: url, name: name }
+                      {
+                        url: url,
+                        name: name,
+                        hasDarkmode: hasDarkmode,
+                        darkmodeUrl: darkmodeUrl
+                      }
                     ]
                     props.techs.splice(index, 1)
                     setSelectedItems(tempItems)

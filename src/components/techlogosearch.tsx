@@ -18,7 +18,7 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
       <div className="flex flex-wrap justify-center pb-5">
         {props.techs.map(({ name, url }, index) => {
           return (
-            <div className={''} key={url + name}>
+            <div className={' select-none'} key={url + name}>
               <div className="mx-3">
                 <div
                   className="duration-300 transform cursor-pointer hover:scale-150"

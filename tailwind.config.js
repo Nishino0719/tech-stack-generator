@@ -13,6 +13,8 @@ module.exports = {
       },
       height: {
         'badge': '4.5rem',
+        'name-debug':'26.8rem',
+        'debug':'26rem',
         'h-144': '36rem',
         'h-figure': '29.53125rem',
         'lg-figure': '23.625rem',

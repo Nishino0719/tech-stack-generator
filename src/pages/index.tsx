@@ -207,16 +207,26 @@ export default function Home() {
           <div className="order-1 mt-5 lg:order-2">
             <div className={`mx-1 md:ml-5 ${darkMode ? 'dark' : ''}`}>
               <div
-                className={` border-4 shadow-lg rounded-3xl h-xs-figure w-xs-figure sm:w-sm-figure sm:h-sm-figure lg:w-lg-figure lg:h-lg-figure xl:w-w-figure xl:h-h-figure dark:border-gray-500 dark:bg-gray-700 overflow-hidden`}
+                className={` border-4 shadow-lg rounded-3xl h-xs-figure w-xs-figure sm:w-sm-figure sm:h-sm-figure lg:w-lg-figure lg:h-lg-figure xl:w-w-figure xl:h-h-figure dark:border-gray-500 dark:bg-gray-900 overflow-hidden`}
                 id="tech-stack"
               >
-                <div className="text-center ">
-                  <p className="h-5 p-2 text-xl font-bold text-black xl:h-10 lg:h-7 md:text-4xl md:mt-5 dark:text-gray-100">
+                <div
+                  className={`text-center mx-8 ${
+                    isDisplayName ? 'h-name-debug' : 'h-debug'
+                  }${
+                    isDebug
+                      ? darkMode
+                        ? ' outline-white'
+                        : ' outline-black'
+                      : ''
+                  }`}
+                >
+                  <p className="h-5 p-2 text-2xl font-bold text-black xl:h-10 lg:h-7 md:text-4xl md:mt-5 dark:text-gray-100">
                     {title}
                   </p>
                   <Draggable grid={[5, 5]}>
                     <p
-                      className={`h-8 m-0 text-xl font-extrabold text-black cursor-move ${
+                      className={`h-5 my-2 text-xl font-extrabold text-black cursor-move ${
                         isDebug && text1 != ''
                           ? darkMode
                             ? ' outline-white'
@@ -229,7 +239,7 @@ export default function Home() {
                   </Draggable>
                   <Draggable grid={[5, 5]}>
                     <p
-                      className={`h-8 text-xl font-extrabold text-black cursor-move ${
+                      className={`h-5 my-2 text-xl font-extrabold text-black cursor-move ${
                         isDebug && text2 != ''
                           ? darkMode
                             ? ' outline-white'
@@ -242,7 +252,7 @@ export default function Home() {
                   </Draggable>
                   <Draggable grid={[5, 5]}>
                     <p
-                      className={`h-8 text-xl font-extrabold text-black cursor-move ${
+                      className={`h-5 my-2 text-xl font-extrabold text-black cursor-move ${
                         isDebug && text3 != ''
                           ? darkMode
                             ? ' outline-white'
@@ -254,7 +264,15 @@ export default function Home() {
                     </p>
                   </Draggable>
 
-                  <div className="flex flex-wrap p-1 ml-4">
+                  <div
+                    className={`flex flex-wrap py-1 ${
+                      isDebug
+                        ? darkMode
+                          ? ' border-t-2 border-gray-100'
+                          : ' border-t-2 border-black'
+                        : 'border-t-2  border-white dark:border-gray-700'
+                    }`}
+                  >
                     {selectedItems.map(({ name, url }, index) => {
                       return (
                         <div key={url + name + index}>
@@ -275,10 +293,10 @@ export default function Home() {
                                     isBadge
                                       ? `  ${
                                           darkMode
-                                            ? 'p-1 border border-white rounded-full mx-4 mt-4'
-                                            : 'border rounded-full mx-4 mt-4 shadow-xl p-1'
+                                            ? 'p-1 border border-white rounded-full mx-2 mt-2'
+                                            : 'border rounded-full mx-2 mt-2 shadow-xl p-1'
                                         }`
-                                      : `mx-4 mt-3 p-1`
+                                      : `mx-2 mt-2 p-1`
                                   }
                                     ${
                                       isDebug && !isDisplayName
@@ -307,7 +325,7 @@ export default function Home() {
                                     className={` pointer-events-none ${
                                       isBadge
                                         ? `${darkMode ? '' : ''}`
-                                        : `w-auto h-16`
+                                        : `w-auto h-16 `
                                     }`}
                                   />
                                 </div>
@@ -315,8 +333,8 @@ export default function Home() {
                               <p
                                 className={
                                   isBadge
-                                    ? 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
-                                    : 'h-4 pt-1 text-xs font-bold dark:text-gray-200'
+                                    ? 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
+                                    : 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
                                 }
                               >
                                 {isDisplayName ? name : ''}

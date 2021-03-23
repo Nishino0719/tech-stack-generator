@@ -154,9 +154,9 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: ''
   },
   {
-    name: 'HTML 5',
+    name: 'HTML5',
     url: frontendsURL.html,
-    hasDarkmode: false,
+    hasDarkmode: true,
     darkmodeUrl: urlFrontBefor + 'dark-html' + urlAfter
   },
   {

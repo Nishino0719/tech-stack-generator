@@ -27,6 +27,8 @@ export default function Home() {
   const [text2, setText2] = useState('')
   const [text3, setText3] = useState('')
   const [border, setBorder] = useState(true)
+  const [searchWord, setSearchWord] = useState('')
+  const [hitElement, setHitElement] = useState<SearchTable[]>([])
 
   const [searchTable, setSearchTable] = useState<SearchTable[]>([])
 
@@ -69,6 +71,26 @@ export default function Home() {
       })
     })
     setSearchTable(lowerCaseTable)
+  }
+
+  function searchTechnology(word: string) {
+    setSearchWord(word)
+    word = word.toLowerCase()
+    const hitTechnology: SearchTable[] = []
+    searchTable.forEach((element) => {
+      if (element.lowerCaseName.indexOf(word) !== -1) {
+        hitTechnology.push({
+          lowerCaseName: element.lowerCaseName,
+          technologyInfo: element.technologyInfo
+        })
+      }
+    })
+    if (hitTechnology.length !== 82) {
+      setHitElement(hitTechnology)
+      console.log('hit number is ' + hitTechnology.length)
+    } else {
+      setHitElement([])
+    }
   }
 
   useEffect(() => {
@@ -190,7 +212,7 @@ export default function Home() {
                   <div className="absolute inset-y-0 left-0 w-6 h-6 bg-white rounded-full shadow toggle__dot"></div>
                 </div>
                 <div className="pt-1 ml-3 text-sm font-medium text-gray-700">
-                  Debug
+                  デバッグ
                 </div>
               </label>
             </div>
@@ -209,10 +231,43 @@ export default function Home() {
                 />
               </svg>
               <input
-                type="text"
+                type="textarea"
+                value={searchWord}
+                onChange={(e) => searchTechnology(e.target.value)}
                 placeholder="技術スタックを検索"
                 className="py-1 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
               />
+            </div>
+            <div className="h-20 p-4 mx-8 overflow-scroll shadow-inner bg-gray-50 rounded-xl">
+              <p className="mt-2 text-sm text-gray-500">
+                {hitElement.length !== 0
+                  ? `候補:${hitElement.length}件見つかりました。`
+                  : '候補なし'}
+              </p>
+
+              <div className="flex flex-wrap justify-center">
+                {hitElement.map((element: SearchTable) => {
+                  return (
+                    <div
+                      className={' select-none p-1 mx-5'}
+                      key={element.technologyInfo.url}
+                    >
+                      <div className="">
+                        <div className="duration-300 transform cursor-pointer hover:scale-110">
+                          <img
+                            src={element.technologyInfo.url}
+                            alt={element.technologyInfo.name}
+                            className={`p-0 h-6 w-auto mr-1 pointer-events-none`}
+                          />
+                        </div>
+                      </div>
+                      <p className="h-3 text-xs font-light">
+                        {element.technologyInfo.name}
+                      </p>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
             <div className="lg:h-64 lg:mt-2 lg:overflow-scroll">
               <TechLogoSearch

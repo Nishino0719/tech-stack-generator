@@ -16,6 +16,7 @@ module.exports = {
         'name-debug':'26.8rem',
         'debug':'26rem',
         'h-144': '36rem',
+        'h-160': '40rem',
         'h-figure': '29.53125rem',
         'lg-figure': '23.625rem',
         'sm-figure': '17.71875rem',

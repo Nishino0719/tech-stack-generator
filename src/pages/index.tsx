@@ -26,7 +26,6 @@ export default function Home() {
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
   const [text3, setText3] = useState('')
-  const [border, setBorder] = useState(true)
   const [searchWord, setSearchWord] = useState('')
   const [hitElement, setHitElement] = useState<SearchTable[]>([])
 
@@ -85,9 +84,8 @@ export default function Home() {
         })
       }
     })
-    if (hitTechnology.length !== 82) {
+    if (hitTechnology.length !== searchTable.length) {
       setHitElement(hitTechnology)
-      console.log('hit number is ' + hitTechnology.length)
     } else {
       setHitElement([])
     }
@@ -100,9 +98,9 @@ export default function Home() {
   return (
     <>
       <div className="h-screen overflow-hidden">
-        <div className="flex flex-wrap justify-center lg:mb-20 lg:flex-nowrap">
-          <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-144 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
-            <div className="flex flex-wrap mt-5 ml-10">
+        <div className="flex flex-wrap justify-center lg:flex-nowrap">
+          <div className="order-2 mx-1 mt-5 overflow-scroll border-4 shadow-lg lg:overflow-hidden lg:order-1 lg:h-h-160 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">
+            <div className="flex flex-wrap mt-5 mb-2 ml-10">
               <div className="mt-4 mr-5">
                 <label className="flex items-center cursor-pointer">
                   <div className="relative">
@@ -199,7 +197,7 @@ export default function Home() {
                 onChange={(e) => setText3(e.target.value.toString())}
               ></textarea>
             </div>
-            <div className="mt-4 ml-8">
+            <div className="mt-4 ml-10">
               <label className="flex items-center cursor-pointer">
                 <div className="relative">
                   <input
@@ -216,7 +214,7 @@ export default function Home() {
                 </div>
               </label>
             </div>
-            <div className="flex mt-3 ml-8 mr-3">
+            <div className="flex mt-1 ml-8 mr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -238,30 +236,63 @@ export default function Home() {
                 className="py-1 pl-2 pr-10 text-gray-700 w-72 focus:outline-none focus:border-green-500"
               />
             </div>
-            <div className="h-20 p-4 mx-8 overflow-scroll shadow-inner bg-gray-50 rounded-xl">
-              <p className="mt-2 text-sm text-gray-500">
+            <div className="h-20 p-2 mx-8 mb-3 overflow-scroll shadow-inner bg-gray-50 rounded-xl">
+              <p className="text-xs text-gray-500 ">
                 {hitElement.length !== 0
-                  ? `候補:${hitElement.length}件見つかりました。`
+                  ? `候補:${hitElement.length}件`
                   : '候補なし'}
               </p>
 
-              <div className="flex flex-wrap justify-center">
-                {hitElement.map((element: SearchTable) => {
+              <div className="flex flex-wrap ">
+                {hitElement.map((element: SearchTable, index: number) => {
                   return (
                     <div
-                      className={' select-none p-1 mx-5'}
+                      className={' select-none mx-5'}
                       key={element.technologyInfo.url}
                     >
-                      <div className="">
-                        <div className="duration-300 transform cursor-pointer hover:scale-110">
+                      <div className="text-center">
+                        <button
+                          className="duration-300 transform cursor-pointer hover:scale-125"
+                          onClick={() => {
+                            let alreadyExsit: boolean = false
+                            selectedItems.forEach((technology) => {
+                              if (
+                                element.technologyInfo.name === technology.name
+                              ) {
+                                alreadyExsit = true
+                              }
+                            })
+                            if (alreadyExsit) {
+                              const tempItems: TechnologyInfo[] = [
+                                ...selectedItems
+                              ]
+                              hitElement.splice(index, 1)
+                              setSelectedItems(tempItems)
+                            } else {
+                              const tempItems: TechnologyInfo[] = [
+                                ...selectedItems,
+                                {
+                                  url: element.technologyInfo.url,
+                                  name: element.technologyInfo.name,
+                                  hasDarkmode:
+                                    element.technologyInfo.hasDarkmode,
+                                  darkmodeUrl:
+                                    element.technologyInfo.darkmodeUrl
+                                }
+                              ]
+                              hitElement.splice(index, 1)
+                              setSelectedItems(tempItems)
+                            }
+                          }}
+                        >
                           <img
                             src={element.technologyInfo.url}
                             alt={element.technologyInfo.name}
-                            className={`p-0 h-6 w-auto mr-1 pointer-events-none`}
+                            className={` h-7 w-7 pointer-events-none`}
                           />
-                        </div>
+                        </button>
                       </div>
-                      <p className="h-3 text-xs font-light">
+                      <p className="w-12 h-2 pb-5 text-xs text-center ">
                         {element.technologyInfo.name}
                       </p>
                     </div>
@@ -269,7 +300,7 @@ export default function Home() {
                 })}
               </div>
             </div>
-            <div className="lg:h-64 lg:mt-2 lg:overflow-scroll">
+            <div className="lg:h-80 lg:mt-1 lg:overflow-scroll">
               <TechLogoSearch
                 category={'Frontend'}
                 techs={frontends}
@@ -399,7 +430,7 @@ export default function Home() {
                                       ? `  ${
                                           darkMode
                                             ? 'p-1 border border-white rounded-full mx-2 mt-2'
-                                            : 'border rounded-full mx-2 mt-2 shadow-xl p-1'
+                                            : 'border rounded-full mx-2 mt-2 shadow-lg p-1'
                                         }`
                                       : `mx-2 mt-2 p-1`
                                   }
@@ -446,8 +477,8 @@ export default function Home() {
                                 <p
                                   className={
                                     isBadge
-                                      ? 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
-                                      : 'h-4 pt-1 text-sm font-bold dark:text-gray-200'
+                                      ? 'h-4 text-sm font-bold dark:text-gray-200'
+                                      : 'h-4 text-sm font-bold dark:text-gray-200'
                                   }
                                 >
                                   {isDisplayName ? name : ''}

@@ -96,7 +96,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen overflow-hidden">
+      <div className="sm:h-screen sm:overflow-hidden">
         <div className="block px-5 mx-auto my-10 sm:hidden">
           <p className="m-5 font-semibold">
             技術スタックジェネレーターでは、様々な技術スタックの図を簡単に作ることができます。

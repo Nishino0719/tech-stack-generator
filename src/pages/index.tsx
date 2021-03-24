@@ -102,10 +102,10 @@ export default function Home() {
             技術スタックジェネレーターでは、様々な技術スタックの図を簡単に作ることができます。
           </p>
           <div className="flex flex-wrap justify-center">
-            <img src="./example1.jpg" alt="" className="w-32 h-auto m-1" />
-            <img src="./example2.jpg" alt="" className="w-32 h-auto m-1" />
-            <img src="./example3.jpg" alt="" className="w-32 h-auto m-1" />
-            <img src="./example4.jpg" alt="" className="w-32 h-auto m-1" />
+            <img src="./example1.jpg" alt="" className="w-40 m-1 h-h-21" />
+            <img src="./example2.jpg" alt="" className="w-40 m-1 h-h-21" />
+            <img src="./example3.jpg" alt="" className="w-40 m-1 h-h-21" />
+            <img src="./example4.jpg" alt="" className="w-40 m-1 h-h-21" />
           </div>
           <img
             src="./comingsoon.jpg"

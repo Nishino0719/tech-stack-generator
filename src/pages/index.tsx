@@ -471,7 +471,7 @@ export default function Home() {
                                       className={` pointer-events-none ${
                                         isBadge
                                           ? `${darkMode ? '' : ''}`
-                                          : `w-auto h-16 `
+                                          : `w-16 h-16 `
                                       }`}
                                     />
                                   </div>

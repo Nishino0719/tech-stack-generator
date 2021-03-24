@@ -64,7 +64,7 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
                         <img
                           src={url}
                           alt={name}
-                          className={`w-auto h-6 pointer-events-none mx-1 mt-1`}
+                          className={`w-6 h-6 pointer-events-none mx-1 mt-1`}
                         />
                       </button>
                     </div>

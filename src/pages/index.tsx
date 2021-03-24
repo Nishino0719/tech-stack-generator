@@ -107,28 +107,28 @@ export default function Home() {
               width={630}
               height={315}
               alt=""
-              className="w-5/12 m-1 "
+              className="h-auto m-1 w-36 "
             />
             <img
               src="./example2.jpg"
               width={630}
               height={315}
               alt=""
-              className="w-5/12 m-1 "
+              className="h-auto m-1 w-36 "
             />
             <img
               src="./example3.jpg"
               width={630}
               height={315}
               alt=""
-              className="w-5/12 m-1 "
+              className="h-auto m-1 w-36 "
             />
             <img
               src="./example4.jpg"
               width={630}
               height={315}
               alt=""
-              className="w-5/12 m-1 "
+              className="h-auto m-1 w-36 "
             />
           </div>
           <img

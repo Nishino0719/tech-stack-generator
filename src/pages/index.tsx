@@ -101,12 +101,34 @@ export default function Home() {
           <p className="m-5 font-semibold">
             技術スタックジェネレーターでは、様々な技術スタックの図を簡単に作ることができます。
           </p>
-          <div className="flex flex-wrap justify-center">
-            <img src="./example1.jpg" alt="" className="w-40 m-1 h-h-21" />
-            <img src="./example2.jpg" alt="" className="w-40 m-1 h-h-21" />
-            <img src="./example3.jpg" alt="" className="w-40 m-1 h-h-21" />
-            <img src="./example4.jpg" alt="" className="w-40 m-1 h-h-21" />
+          <p className="m-5">こんなものが作れます</p>
+          <div className="py-2 my-10">
+            <img
+              src="./example1.jpg"
+              alt=""
+              className="py-2 mx-auto text-center w-72"
+            />
+            <img
+              src="./example2.jpg"
+              alt=""
+              className="py-2 mx-auto text-center w-72"
+            />
+            <img
+              src="./example3.jpg"
+              alt=""
+              className="py-2 mx-auto text-center w-72"
+            />
+            <img
+              src="./example4.jpg"
+              alt=""
+              className="py-2 mx-auto text-center w-72"
+            />
           </div>
+          <p className="my-3 text-sm font-semibold text-center opacity-60">
+            申し訳ございません..こちらの端末サイズは現在制作中です。
+            <br />
+            もしよろしければPCからご利用ください！
+          </p>
           <img
             src="./comingsoon.jpg"
             width={600}
@@ -114,11 +136,6 @@ export default function Home() {
             alt=""
             className="mx-auto my-5 text-center w-72"
           />
-          <p className="my-3 text-sm font-semibold text-center opacity-60">
-            申し訳ございません..こちらの端末サイズは現在制作中です。
-            <br />
-            もしよろしければPCからご利用ください！
-          </p>
         </div>
         <div className="hidden sm:block">
           <div className="flex flex-wrap justify-center lg:flex-nowrap">

@@ -12,7 +12,7 @@ type Props = {
 export const TechLogoSearch: React.FC<Props> = (props) => {
   const { selectedItems, setSelectedItems } = useContext(SelectedContext)
   const [count, setCount] = useState(0)
-  const [arrayLength, setArrayLength] = useState(props.techs.length)
+  const [arrayLength] = useState(props.techs.length)
 
   if (count >= arrayLength) {
     return null
@@ -64,6 +64,8 @@ export const TechLogoSearch: React.FC<Props> = (props) => {
                         <img
                           src={url}
                           alt={name}
+                          height={24}
+                          width={24}
                           className={`w-6 h-6 pointer-events-none mx-1 mt-1`}
                         />
                       </button>

@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import Draggable from 'react-draggable'
 import { Footer } from '../components/footer'
-import { Header } from '../components/header'
 import { SaveButton } from '../components/saveButton'
 import { TechLogoSearch } from '../components/techlogosearch'
 import { SelectedContext } from '../hooks/selected'
@@ -290,6 +289,8 @@ export default function Home() {
                           <img
                             src={element.technologyInfo.url}
                             alt={element.technologyInfo.name}
+                            height={28}
+                            width={28}
                             className={` h-7 w-7 pointer-events-none`}
                           />
                         </button>

@@ -102,34 +102,10 @@ export default function Home() {
             技術スタックジェネレーターでは、様々な技術スタックの図を簡単に作ることができます。
           </p>
           <div className="flex flex-wrap justify-center">
-            <img
-              src="./example1.jpg"
-              width={630}
-              height={315}
-              alt=""
-              className="h-auto m-1 w-36 "
-            />
-            <img
-              src="./example2.jpg"
-              width={630}
-              height={315}
-              alt=""
-              className="h-auto m-1 w-36 "
-            />
-            <img
-              src="./example3.jpg"
-              width={630}
-              height={315}
-              alt=""
-              className="h-auto m-1 w-36 "
-            />
-            <img
-              src="./example4.jpg"
-              width={630}
-              height={315}
-              alt=""
-              className="h-auto m-1 w-36 "
-            />
+            <img src="./example1.jpg" alt="" className="h-auto m-1 w-28" />
+            <img src="./example2.jpg" alt="" className="h-auto m-1 w-28 " />
+            <img src="./example3.jpg" alt="" className="h-auto m-1 w-28 " />
+            <img src="./example4.jpg" alt="" className="h-auto m-1 w-28 " />
           </div>
           <img
             src="./comingsoon.jpg"
@@ -545,7 +521,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="mx-auto my-5 lg:my-10 w-80">
+              <div className="hidden mx-auto my-5 lg:my-10 w-80 sm:block">
                 <SaveButton title={title} />
               </div>
             </div>

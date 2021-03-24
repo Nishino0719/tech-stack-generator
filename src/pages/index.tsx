@@ -300,7 +300,7 @@ export default function Home() {
                 })}
               </div>
             </div>
-            <div className="lg:h-80 lg:mt-1 lg:overflow-scroll">
+            <div className="lg:h-64 lg:mt-1 lg:overflow-scroll">
               <TechLogoSearch
                 category={'Frontend'}
                 techs={frontends}

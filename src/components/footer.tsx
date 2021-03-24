@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="absolute bottom-0 w-full h-12 border-t">
+    <div className="absolute bottom-0 hidden w-full h-12 border-t sm:block">
       <p className="p-2 text-sm text-center font-nomal">
         Powered by
         <a

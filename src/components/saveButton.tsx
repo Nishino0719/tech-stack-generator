@@ -17,24 +17,29 @@ export const SaveButton: React.FC<Props> = (props) => {
   }
   return (
     <div className="block text-center">
+      <p className="text-xs font-thin opacity-50 pointer-events-none">
+        (注意)デスクトップサイズでないブラウザだと正しく画像が保存されない場合がございます。
+      </p>
       <button
-        className="flex w-56 p-2 text-sm font-semibold duration-200 transform border-4 shadow-lg justify-items-center lg:p-3 lg:text-xl lg:w-80 rounded-2xl hover:scale-105 "
+        className="flex w-56 p-2 duration-200 transform border-4 shadow-lg justify-items-center lg:p-3 lg:text-xl lg:w-80 rounded-2xl hover:scale-105 "
         onClick={getElement}
       >
-        画像をダウンロード
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          className="w-5 h-5 ml-3 stroke-current lg:w-7 lg:h-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-          />
-        </svg>
+        <p className="flex mx-auto font-semibold">
+          画像をダウンロード
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="w-5 h-5 stroke-current lg:w-7 lg:h-7"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </svg>
+        </p>
       </button>
     </div>
   )

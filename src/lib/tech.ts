@@ -13,6 +13,11 @@ export type TechnologyInfo = {
   darkmodeUrl: string
 }
 
+export interface SearchTable {
+  lowerCaseName: string
+  technologyInfo: TechnologyInfo
+}
+
 export const frontendsURL = {
   angular: urlFrontBefor + 'angular' + urlAfter,
   babel: urlFrontBefor + 'babel' + urlAfter,
@@ -42,6 +47,7 @@ export const frontendsURL = {
 export const backendsURL = {
   cakephp: urlBackBefor + 'cakephp-icon' + urlAfter,
   django: urlBackBefor + 'django-icon' + urlAfter,
+  elixir: urlBackBefor + 'elixir' + urlAfter,
   express: urlBackBefor + 'express' + urlAfter,
   flask: urlBackBefor + 'flask' + urlAfter,
   go: urlBackBefor + 'go' + urlAfter,
@@ -149,9 +155,9 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: ''
   },
   {
-    name: 'HTML 5',
+    name: 'HTML5',
     url: frontendsURL.html,
-    hasDarkmode: false,
+    hasDarkmode: true,
     darkmodeUrl: urlFrontBefor + 'dark-html' + urlAfter
   },
   {
@@ -167,13 +173,13 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: urlFrontBefor + 'dark-jquery' + urlAfter
   },
   {
-    name: 'Materializecss',
+    name: 'Materialize',
     url: frontendsURL.materializecss,
     hasDarkmode: false,
     darkmodeUrl: ''
   },
   {
-    name: 'Material UI',
+    name: 'MaterialUI',
     url: frontendsURL.materialui,
     hasDarkmode: false,
     darkmodeUrl: ''
@@ -254,6 +260,12 @@ export const backends: TechnologyInfo[] = [
     name: 'Django',
     hasDarkmode: true,
     darkmodeUrl: urlBackBefor + 'dark-django-icon' + urlAfter
+  },
+  {
+    url: backendsURL.elixir,
+    name: 'Elixir',
+    hasDarkmode: false,
+    darkmodeUrl: ''
   },
   {
     url: backendsURL.express,

@@ -97,6 +97,53 @@ export default function Home() {
   return (
     <>
       <div className="h-screen overflow-hidden">
+        <div className="block px-5 mx-auto my-10 sm:hidden">
+          <p className="m-5 font-semibold">
+            技術スタックジェネレーターでは、様々な技術スタックの図を簡単に作ることができます。
+          </p>
+          <div className="flex flex-wrap justify-center">
+            <img
+              src="./example1.jpg"
+              width={630}
+              height={315}
+              alt=""
+              className="w-5/12 m-1 "
+            />
+            <img
+              src="./example2.jpg"
+              width={630}
+              height={315}
+              alt=""
+              className="w-5/12 m-1 "
+            />
+            <img
+              src="./example3.jpg"
+              width={630}
+              height={315}
+              alt=""
+              className="w-5/12 m-1 "
+            />
+            <img
+              src="./example4.jpg"
+              width={630}
+              height={315}
+              alt=""
+              className="w-5/12 m-1 "
+            />
+          </div>
+          <img
+            src="./comingsoon.jpg"
+            width={600}
+            height={315}
+            alt=""
+            className="mx-auto my-5 text-center w-96"
+          />
+          <p className="my-3 text-sm font-semibold text-center opacity-60">
+            申し訳ございません..こちらの端末サイズは現在制作中です。
+            <br />
+            もしよろしければPCからご利用ください！
+          </p>
+        </div>
         <div className="hidden sm:block">
           <div className="flex flex-wrap justify-center lg:flex-nowrap">
             <div className="order-2 mx-1 mt-0 overflow-scroll border-4 shadow-lg lg:mt-5 lg:overflow-hidden lg:order-1 lg:h-h-160 h-52 lg:my-5 w-xs-figure lg:mr-5 rounded-3xl lg:w-96">

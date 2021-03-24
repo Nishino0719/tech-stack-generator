@@ -267,6 +267,7 @@ export default function Home() {
                                 ...selectedItems
                               ]
                               hitElement.splice(index, 1)
+                              setSearchWord('')
                               setSelectedItems(tempItems)
                             } else {
                               const tempItems: TechnologyInfo[] = [
@@ -281,6 +282,7 @@ export default function Home() {
                                 }
                               ]
                               hitElement.splice(index, 1)
+                              setSearchWord('')
                               setSelectedItems(tempItems)
                             }
                           }}

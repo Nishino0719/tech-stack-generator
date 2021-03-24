@@ -136,7 +136,7 @@ export default function Home() {
             width={600}
             height={315}
             alt=""
-            className="mx-auto my-5 text-center w-96"
+            className="mx-auto my-5 text-center w-72"
           />
           <p className="my-3 text-sm font-semibold text-center opacity-60">
             申し訳ございません..こちらの端末サイズは現在制作中です。

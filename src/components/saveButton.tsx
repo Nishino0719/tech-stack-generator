@@ -18,7 +18,7 @@ export const SaveButton: React.FC<Props> = (props) => {
   return (
     <div className="block text-center">
       <p className="text-xs font-thin opacity-50 pointer-events-none">
-        (注意)デスクトップサイズでないブラウザだと正しく画像が保存されない場合がございます。
+        (注意)デスクトップサイズでない場合、正しく画像が保存されないことがあります。
       </p>
       <button
         className="flex w-56 p-2 duration-200 transform border-4 shadow-lg justify-items-center lg:p-3 lg:text-xl lg:w-80 rounded-2xl hover:scale-105 "

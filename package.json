@@ -11,6 +11,7 @@
     "autoprefixer": "^10.2.5",
     "html2canvas": "^1.0.0-rc.7",
     "next": "10.0.9",
+    "next-pwa": "^5.0.6",
     "postcss": "^8.2.8",
     "react": "17.0.1",
     "react-dom": "17.0.1",

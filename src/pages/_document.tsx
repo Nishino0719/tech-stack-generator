@@ -13,15 +13,6 @@ class MyDocument extends Document {
       <Html lang="ja">
         <title>技術スタックジェネレーター</title>
         <Head>
-          {/* <meta
-            name='description'
-            content='お好みの技術スタックを簡単に画像に'
-          />
-          <link
-            rel='icon'
-            type='image/x-icon'
-            href={process.env.NEXT_PUBLIC_FAVICON_HREF}
-          /> */}
           <meta
             name="msapplication-square70x70logo"
             content="/site-tile-70x70.png"
@@ -56,7 +47,30 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000" />
           <meta
             name="description"
-            content="お好みの技術スタックを簡単に画像に"
+            content="お好みの技術スタックを簡単に生成！"
+          />
+          <meta name="twitter:title" content={'技術スタックジェネレーター'} />
+          <meta
+            name="twitter:description"
+            content={'お好みの技術スタックを簡単に生成！'}
+          />
+          <meta
+            name="twitter:image"
+            content={
+              'https://user-images.githubusercontent.com/55534054/112464767-3dc04e00-8da7-11eb-8943-4418891c3983.png'
+            }
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta property="og:title" content={'技術スタックジェネレーター'} />
+          <meta
+            property="og:description"
+            content={'お好みの技術スタックを簡単に生成！'}
+          />
+          <meta
+            property="og:image"
+            content={
+              'https://user-images.githubusercontent.com/55534054/112464767-3dc04e00-8da7-11eb-8943-4418891c3983.png'
+            }
           />
           <link rel="icon" sizes="192x192" href="/icon-192x192.png" />
           <link rel="icon" href="/favicon.ico" />

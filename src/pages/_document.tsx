@@ -60,7 +60,7 @@ class MyDocument extends Document {
               'https://user-images.githubusercontent.com/55534054/112464767-3dc04e00-8da7-11eb-8943-4418891c3983.png'
             }
           />
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:title" content={'技術スタックジェネレーター'} />
           <meta
             property="og:description"

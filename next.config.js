@@ -1,6 +1,6 @@
-import withPWA from 'next-pwa'
+const withPWA = require('next-pwa')
 
-export default withPWA({
+module.exports = withPWA({
   pwa: {
     dest: 'public' // swの出力ディレクトリ
     // runtimeCaching: []

@@ -113,6 +113,8 @@ export const tasksURL = {
   github: urlTaskBefor + 'github-icon' + urlAfter,
   gitlab: urlTaskBefor + 'gitlab' + urlAfter,
   slack: urlTaskBefor + 'slack' + urlAfter,
+  line: urlTaskBefor + 'line' + urlAfter,
+  notion: urlTaskBefor + 'notion' + urlAfter,
   sourcetree: urlTaskBefor + 'sourcetree' + urlAfter,
   trello: urlTaskBefor + 'trello' + urlAfter
 }
@@ -537,6 +539,18 @@ export const tasks: TechnologyInfo[] = [
   {
     url: tasksURL.sourcetree,
     name: 'Sourcetree',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: tasksURL.notion,
+    name: 'Notion',
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    url: tasksURL.line,
+    name: 'Line',
     hasDarkmode: false,
     darkmodeUrl: ''
   },

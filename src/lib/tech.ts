@@ -42,7 +42,8 @@ export const frontendsURL = {
   tailwindcss: urlFrontBefor + 'tailwindcss' + urlAfter,
   typescript: urlFrontBefor + 'typescript' + urlAfter,
   vue: urlFrontBefor + 'vue' + urlAfter,
-  vuetifyjs: urlFrontBefor + 'vuetifyjs' + urlAfter
+  vuetifyjs: urlFrontBefor + 'vuetifyjs' + urlAfter,
+  mantine: urlFrontBefor + 'mantine-logo' + urlAfter
 }
 export const backendsURL = {
   cakephp: urlBackBefor + 'cakephp-icon' + urlAfter,
@@ -121,22 +122,10 @@ export const tasksURL = {
 
 export const frontends: TechnologyInfo[] = [
   {
-    name: 'Angular',
-    url: frontendsURL.angular,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Babel',
-    url: frontendsURL.babel,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Bootstrap',
-    url: frontendsURL.bootstrap,
-    hasDarkmode: false,
-    darkmodeUrl: ''
+    name: 'HTML5',
+    url: frontendsURL.html,
+    hasDarkmode: true,
+    darkmodeUrl: urlFrontBefor + 'dark-html' + urlAfter
   },
   {
     name: 'CSS3',
@@ -144,24 +133,7 @@ export const frontends: TechnologyInfo[] = [
     hasDarkmode: true,
     darkmodeUrl: urlFrontBefor + 'dark-css-3' + urlAfter
   },
-  {
-    name: 'Element UI',
-    url: frontendsURL.element,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Gatsby',
-    url: frontendsURL.gatsby,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'HTML5',
-    url: frontendsURL.html,
-    hasDarkmode: true,
-    darkmodeUrl: urlFrontBefor + 'dark-html' + urlAfter
-  },
+  { name: 'Sass', url: frontendsURL.sass, hasDarkmode: false, darkmodeUrl: '' },
   {
     name: 'Javascript',
     url: frontendsURL.javascript,
@@ -175,32 +147,14 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: urlFrontBefor + 'dark-jquery' + urlAfter
   },
   {
-    name: 'Materialize',
-    url: frontendsURL.materializecss,
+    name: 'Typescript',
+    url: frontendsURL.typescript,
     hasDarkmode: false,
     darkmodeUrl: ''
   },
   {
-    name: 'MaterialUI',
-    url: frontendsURL.materialui,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Next.js',
-    url: frontendsURL.nextjs,
-    hasDarkmode: true,
-    darkmodeUrl: urlFrontBefor + 'dark-nextjs' + urlAfter
-  },
-  {
-    name: 'Nuxt.js',
-    url: frontendsURL.nuxticon,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Postcss',
-    url: frontendsURL.postcss,
+    name: 'React',
+    url: frontendsURL.react,
     hasDarkmode: false,
     darkmodeUrl: ''
   },
@@ -211,12 +165,78 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: ''
   },
   {
-    name: 'React',
-    url: frontendsURL.react,
+    name: 'Next.js',
+    url: frontendsURL.nextjs,
+    hasDarkmode: true,
+    darkmodeUrl: urlFrontBefor + 'dark-nextjs' + urlAfter
+  },
+  {
+    name: 'Gatsby',
+    url: frontendsURL.gatsby,
     hasDarkmode: false,
     darkmodeUrl: ''
   },
-  { name: 'Sass', url: frontendsURL.sass, hasDarkmode: false, darkmodeUrl: '' },
+  { name: 'Vue', url: frontendsURL.vue, hasDarkmode: false, darkmodeUrl: '' },
+  {
+    name: 'Nuxt.js',
+    url: frontendsURL.nuxticon,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Angular',
+    url: frontendsURL.angular,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Tailwind css',
+    url: frontendsURL.tailwindcss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Bootstrap',
+    url: frontendsURL.bootstrap,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Mantine',
+    url: frontendsURL.mantine,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Element UI',
+    url: frontendsURL.element,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'MaterialUI',
+    url: frontendsURL.materialui,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Materialize',
+    url: frontendsURL.materializecss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Vuetifyjs',
+    url: frontendsURL.vuetifyjs,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
+  {
+    name: 'Postcss',
+    url: frontendsURL.postcss,
+    hasDarkmode: false,
+    darkmodeUrl: ''
+  },
   {
     name: 'StoryBook',
     url: frontendsURL.storybook,
@@ -230,21 +250,8 @@ export const frontends: TechnologyInfo[] = [
     darkmodeUrl: ''
   },
   {
-    name: 'Tailwind css',
-    url: frontendsURL.tailwindcss,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  {
-    name: 'Typescript',
-    url: frontendsURL.typescript,
-    hasDarkmode: false,
-    darkmodeUrl: ''
-  },
-  { name: 'Vue', url: frontendsURL.vue, hasDarkmode: false, darkmodeUrl: '' },
-  {
-    name: 'Vuetifyjs',
-    url: frontendsURL.vuetifyjs,
+    name: 'Babel',
+    url: frontendsURL.babel,
     hasDarkmode: false,
     darkmodeUrl: ''
   }
